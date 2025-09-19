@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>SMPL基础</title>
+      <link href="/2025/09/19/SMPL%E5%9F%BA%E7%A1%80/"/>
+      <url>/2025/09/19/SMPL%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<h1 id="SMPL基础"><a href="#SMPL基础" class="headerlink" title="SMPL基础"></a>SMPL基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><em>SMPL</em>，全称为Skinned Multi-Person Linear Model，是一种参数化的三维人体模型</p><h2 id="轴—角（axis–angle）表示法"><a href="#轴—角（axis–angle）表示法" class="headerlink" title="轴—角（axis–angle）表示法"></a>轴—角（axis–angle）表示法</h2><p>在正式学习SMPL之前，我们需要铺垫一些基础的数学知识，不然学到后面就会一头雾水。<br>我们先来学一学轴-角表示法，这些有用的基础知识在大学的通识课上可是一点都没有学过的</p><p>轴(axis): 一个单位向量 $\boldsymbol{u} = (u_x,u_y,u_z)，表示一个向量要绕着哪一个直线旋转$</p><p>角度(angle): 一个值$\theta$, 表示旋转多少度</p><blockquote><p>$\boldsymbol{u} = (0, 0, 1),\  \theta = 90^\circ$, 意思就是绕着z轴旋转$90^\circ$</p></blockquote><h2 id="罗德里格斯公式-Rodrigues’-rotation-formula"><a href="#罗德里格斯公式-Rodrigues’-rotation-formula" class="headerlink" title="罗德里格斯公式 (Rodrigues’ rotation formula)"></a>罗德里格斯公式 (Rodrigues’ rotation formula)</h2><p>在了解罗德里格斯公式之前，我们必须要补充了解一个知识点，叫做<em>叉乘矩阵</em></p><p>我们给定一个单位向量</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SMPL </tag>
+            
+            <tag> 3D视觉 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello</title>
       <link href="/2025/09/08/Hello/"/>
       <url>/2025/09/08/Hello/</url>
