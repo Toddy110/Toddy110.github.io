@@ -5,17 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="CNN基础, Modesty.">
-    <meta name="description" content="目录
-目录
-CNN (Convolutional Neural Network, 卷积神经网络)（基础）
-1. 图像基础与本质
-1.1 图像的输入结构
-1.2 数字图像的本质
-1.3 栅格图像与矢量图像
-
-
-2. 卷积操作与特征提取
-2.1">
+    <meta name="description" content="CNN (Convolutional Neural Network, 卷积神经网络)（基础）
+1. 图像基础与本质1.1 图像的输入结构以MNIST数据集为例，灰度图像的输入尺寸为 1×28×281 \times 28 \times 281">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -407,7 +398,7 @@ CNN (Convolutional Neural Network, 卷积神经网络)（基础）
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    4.8k
                 </div>
                 
 
@@ -427,49 +418,7 @@ CNN (Convolutional Neural Network, 卷积神经网络)（基础）
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#cnn-convolutional-neural-network-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80">CNN (Convolutional Neural Network, 卷积神经网络)（基础）</a><ul>
-<li><a href="#1-%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%9C%AC%E8%B4%A8">1. 图像基础与本质</a><ul>
-<li><a href="#11-%E5%9B%BE%E5%83%8F%E7%9A%84%E8%BE%93%E5%85%A5%E7%BB%93%E6%9E%84">1.1 图像的输入结构</a></li>
-<li><a href="#12-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E7%9A%84%E6%9C%AC%E8%B4%A8">1.2 数字图像的本质</a></li>
-<li><a href="#13-%E6%A0%85%E6%A0%BC%E5%9B%BE%E5%83%8F%E4%B8%8E%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%83%8F">1.3 栅格图像与矢量图像</a></li>
-</ul>
-</li>
-<li><a href="#2-%E5%8D%B7%E7%A7%AF%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96">2. 卷积操作与特征提取</a><ul>
-<li><a href="#21-%E5%8D%B7%E7%A7%AF%E6%93%8D%E4%BD%9C%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86">2.1 卷积操作的基本原理</a></li>
-<li><a href="#22-%E5%8D%B7%E7%A7%AF%E5%B1%82%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8E%E6%B5%81%E7%A8%8B">2.2 卷积层的结构与流程</a></li>
-</ul>
-</li>
-<li><a href="#3-%E5%8D%B7%E7%A7%AF%E6%93%8D%E4%BD%9C%E7%9A%84%E6%95%B0%E5%AD%A6%E4%B8%8E%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B">3. 卷积操作的数学与代码示例</a><ul>
-<li><a href="#31-%E5%8D%95%E9%80%9A%E9%81%93%E5%8D%B7%E7%A7%AF%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B">3.1 单通道卷积计算过程</a></li>
-<li><a href="#32-%E5%A4%9A%E9%80%9A%E9%81%93%E5%8D%B7%E7%A7%AF%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8F%82%E6%95%B0">3.2 多通道卷积的结构与参数</a></li>
-<li><a href="#33-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B%E5%A4%9A%E9%80%9A%E9%81%93%E5%8D%B7%E7%A7%AF">3.3 代码示例：多通道卷积</a></li>
-</ul>
-</li>
-<li><a href="#4-%E5%8D%B7%E7%A7%AF%E6%93%8D%E4%BD%9C%E7%9A%84%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3">4. 卷积操作的参数详解</a><ul>
-<li><a href="#41-padding%E5%A1%AB%E5%85%85">4.1 Padding（填充）</a><ul>
-<li><a href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8Bpadding">代码示例：Padding</a></li>
-</ul>
-</li>
-<li><a href="#42-stride%E6%AD%A5%E5%B9%85">4.2 Stride（步幅）</a><ul>
-<li><a href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8Bstride">代码示例：Stride</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#5-%E4%B8%8B%E9%87%87%E6%A0%B7pooling%E6%93%8D%E4%BD%9C">5. 下采样（Pooling）操作</a><ul>
-<li><a href="#51-maxpooling%E6%9C%80%E5%A4%A7%E6%B1%A0%E5%8C%96">5.1 MaxPooling（最大池化）</a><ul>
-<li><a href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8Bmaxpooling">代码示例：MaxPooling</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#6-cnn%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E6%B5%81%E7%A8%8B%E4%B8%BE%E4%BE%8B">6. CNN网络结构流程举例</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="CNN-Convolutional-Neural-Network-卷积神经网络-（基础）"><a href="#CNN-Convolutional-Neural-Network-卷积神经网络-（基础）" class="headerlink" title="CNN (Convolutional Neural Network, 卷积神经网络)（基础）"></a>CNN (Convolutional Neural Network, 卷积神经网络)（基础）</h1><hr>
+                <h1 id="CNN-Convolutional-Neural-Network-卷积神经网络-（基础）"><a href="#CNN-Convolutional-Neural-Network-卷积神经网络-（基础）" class="headerlink" title="CNN (Convolutional Neural Network, 卷积神经网络)（基础）"></a>CNN (Convolutional Neural Network, 卷积神经网络)（基础）</h1><hr>
 <h2 id="1-图像基础与本质"><a href="#1-图像基础与本质" class="headerlink" title="1. 图像基础与本质"></a>1. 图像基础与本质</h2><h3 id="1-1-图像的输入结构"><a href="#1-1-图像的输入结构" class="headerlink" title="1.1 图像的输入结构"></a>1.1 图像的输入结构</h3><p>以MNIST数据集为例，灰度图像的输入尺寸为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>×</mo><mn>28</mn><mo>×</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">1 \times 28 \times 28</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">28</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">28</span></span></span></span>，即：</p>
 <ul>
 <li>通道数（Channel）：1，表示灰度图像只有一个颜色通道；</li>
@@ -1344,7 +1293,7 @@ optimizer <span class="token operator">=</span> optim<span class="token punctuat
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5k</span>
+                        class="white-color">4.8k</span>
             
             
             
