@@ -89,70 +89,39 @@
 /* 复制按钮：增强可见性（带文字“复制”）*/
  .code_copy {
 	position: absolute;
-	top: 8px;
-	right: 12px;
+	top: 6px;
+	right: 10px;
 	z-index: 20;
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
-	font-size: 12px;
-	font-weight: 600;
-	padding: 6px 14px;
-	border-radius: 8px;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 500;
+	padding: 4px 10px 4px 10px;
+	border-radius: 6px;
 	cursor: pointer;
 	line-height: 1;
-	letter-spacing: .5px;
 	user-select: none;
-	background: linear-gradient(135deg,#eef4ff,#d9e7ff 55%,#cddfff);
-	border: 1px solid #b2c4ff;
-		color: #ffffff;
-	box-shadow: 0 2px 5px rgba(0,0,0,.06), 0 4px 12px -4px rgba(0,0,0,.12);
-	transition: background .25s ease, box-shadow .25s ease, transform .2s ease, color .25s, border-color .25s;
-	backdrop-filter: blur(4px);
+	background: rgba(0,0,0,.55);
+	color: #fff !important;
+	border: 1px solid rgba(255,255,255,.25);
+	box-shadow: 0 2px 6px rgba(0,0,0,.15);
+	transition: background .2s ease, box-shadow .25s ease, transform .18s ease;
+	font-family: system-ui, "Helvetica Neue", Arial, sans-serif;
+	letter-spacing: .25px;
 }
-.code_copy .code-copy-icon { font-size: 13px; transform: translateY(-1px); }
-.code_copy .code-copy-text { font-size: 12px; }
-.code_copy:hover {
-	background: linear-gradient(135deg,#e5ecff,#d4e2ff);
-	box-shadow: 0 4px 10px -2px rgba(0,0,0,.18);
-	transform: translateY(-2px);
-	color: #ffffff;
-}
-.code_copy.is-copied { 
-	background: linear-gradient(135deg,#34d399,#10b981);
-	border-color: #059669;
-	box-shadow: 0 3px 10px -2px rgba(16,185,129,.45);
-}
-.code_copy.is-copied .code-copy-icon { transform: translateY(-1px) scale(1.05); }
-.code_copy.is-copied .code-copy-text { letter-spacing: 1px; }
+.code_copy:hover { background: rgba(0,0,0,.7); transform: translateY(-2px); }
+.code_copy.is-copied { background: #059669; border-color:#059669; }
 .code_copy:active { transform: translateY(0) scale(.95); }
 .code_copy:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 2px; }
 
 /* Dark mode copy button */
-body.DarkMode .code_copy { 
-	background: linear-gradient(135deg,#313d52,#384762); 
-	border: 1px solid #465675; 
-	color: #ffffff; 
-	box-shadow: 0 2px 5px rgba(0,0,0,.4);
-}
-body.DarkMode .code_copy:hover { 
-	background: linear-gradient(135deg,#3b4a60,#425372); 
-	box-shadow: 0 4px 12px -2px rgba(0,0,0,.55);
-	color: #ffffff;
-}
-body.DarkMode .code_copy.is-copied { background: linear-gradient(135deg,#059669,#047857); border-color:#047857; }
+body.DarkMode .code_copy { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; }
+body.DarkMode .code_copy:hover { background: rgba(255,255,255,.18); }
+body.DarkMode .code_copy.is-copied { background:#059669; border-color:#059669; }
 
 @media (prefers-color-scheme: dark) {
-		body:not(.force-light) .code_copy { 
-			background: linear-gradient(135deg,#313d52,#384762); 
-			border: 1px solid #465675; 
-			color: #ffffff; 
-		}
-		body:not(.force-light) .code_copy:hover { 
-			background: linear-gradient(135deg,#3b4a60,#425372); 
-			color: #ffffff; 
-		}
-			body:not(.force-light) .code_copy.is-copied { background: linear-gradient(135deg,#059669,#047857); border-color:#047857; }
+			body:not(.force-light) .code_copy { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; }
+			body:not(.force-light) .code_copy:hover { background: rgba(255,255,255,.18); }
+			body:not(.force-light) .code_copy.is-copied { background:#059669; border-color:#059669; }
 }
 
 /* 复制提示浮层 */

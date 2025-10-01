@@ -1,12 +1,7 @@
 // 代码块一键复制
 
 $(function () {
-    var $copyIcon = $(
-        '<button class="code_copy" type="button" title="复制代码" aria-label="复制代码">\n' +
-        '  <span class="code-copy-icon" aria-hidden="true">📋</span>\n' +
-        '  <span class="code-copy-text">复制代码</span>\n' +
-        '</button>'
-    )
+    var $copyIcon = $('<button class="code_copy" type="button" title="复制代码" aria-label="复制代码">复制代码</button>')
     var $notice = $('<div class="codecopy_notice"></div>')
     $('.code-area').prepend($copyIcon)
     $('.code-area').prepend($notice)
@@ -60,12 +55,10 @@ $(function () {
         selection.removeAllRanges()
         var $btn = $(this)
         if(!$btn.hasClass('is-copied')) {
-            var original = $btn.find('.code-copy-text').text()
-            $btn.addClass('is-copied')
-                .find('.code-copy-text').text('已复制')
+            var original = $btn.text()
+            $btn.addClass('is-copied').text('已复制 ✓')
             setTimeout(function(){
-                $btn.removeClass('is-copied')
-                    .find('.code-copy-text').text(original)
+                $btn.removeClass('is-copied').text(original)
             }, 1200)
         }
     })
