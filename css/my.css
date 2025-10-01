@@ -1,1 +1,263 @@
-/* Here is your custom css styles. */
+/* Custom enhanced code block theme */
+
+/* 1. 基础代码块：统一变量 -- 亮/暗配色方案 */
+/* Tokyo Night 配色变量（light 采用淡化版，dark 采用原主题风格） */
+:root {
+	--code-bg-light: #f5f7fa; /* 浅背景防刺眼 */
+	--code-border-light: #e2e8f0;
+	--code-text-light: #2e3440;
+	--code-inline-bg: #eef2f7;
+	--code-inline-text: #c7254e;
+	--code-accent: #7aa2f7; /* 关键色 */
+	--code-add: #449d48;
+	--code-del: #c34043;
+	--code-keyword: #9d7cd8; /* 关键字 */
+	--code-string: #587539; /* 字符串 (light tone) */
+	--code-func: #7aa2f7;
+	--code-number: #b15c00;
+	--code-comment: #8292a2;
+
+	--code-bg-dark: #1a1b26; /* Tokyo Night 深背景 */
+	--code-border-dark: #2e3240;
+	--code-text-dark: #c0caf5;
+	--code-inline-bg-dark: #24283b;
+	--code-inline-text-dark: #ff9e64;
+	--code-shadow-dark: 0 2px 8px rgba(0,0,0,.6);
+	--tokyo-red: #f7768e;
+	--tokyo-orange: #ff9e64;
+	--tokyo-yellow: #e0af68;
+	--tokyo-green: #9ece6a;
+	--tokyo-cyan: #7dcfff;
+	--tokyo-blue: #7aa2f7;
+	--tokyo-magenta: #bb9af7;
+	--tokyo-comment: #565f89;
+}
+
+/* 2. 去除主题默认“Mac 三色圆点” */
+.code-area::after { display: none !important; }
+
+/* 3. 块级代码整体样式 */
+#articleContent pre { 
+	padding: 1rem 1.2rem !important;
+	margin: 1.2rem 0;
+	background: var(--code-bg-light);
+	border: 1px solid var(--code-border-light);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,.06);
+	line-height: 1.55;
+	overflow: auto;
+}
+#articleContent pre code {
+	background: transparent !important;
+	color: var(--code-text-light);
+	font-size: 0.92rem;
+	font-family: 'JetBrainsMono','Fira Code', Menlo, Consolas, Monaco, 'Courier New', monospace;
+	font-weight: 450;
+}
+
+/* 避免某些主题把代码块内的 class/def 解析成 h1/h2 样式导致“大字” */
+#articleContent pre h1,
+#articleContent pre h2,
+#articleContent pre h3,
+#articleContent pre h4,
+#articleContent pre h5,
+#articleContent pre h6 {
+	font-size: inherit !important;
+	line-height: inherit !important;
+	font-weight: inherit !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* 4. 行内代码 */
+#articleContent p code,
+#articleContent li code,
+#articleContent h2 code,
+#articleContent h3 code,
+#articleContent table code {
+	background: var(--code-inline-bg);
+	color: var(--code-inline-text);
+	padding: 2px 6px;
+	border: 1px solid #f2e2c5;
+	border-radius: 4px;
+	font-size: 0.85rem;
+}
+
+/* 5. 仅隐藏不需要的语言 / 展开按钮，恢复复制按钮 */
+.code_lang, .code-expand { display: none !important; }
+
+/* 复制按钮：增强可见性（带文字“复制”）*/
+ .code_copy {
+	position: absolute;
+	top: 8px;
+	right: 12px;
+	z-index: 20;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	line-height: 1;
+	letter-spacing: .5px;
+	user-select: none;
+	background: linear-gradient(135deg,#eef4ff,#d9e7ff 55%,#cddfff);
+	border: 1px solid #b2c4ff;
+		color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0,0,0,.06), 0 4px 12px -4px rgba(0,0,0,.12);
+	transition: background .25s ease, box-shadow .25s ease, transform .2s ease, color .25s, border-color .25s;
+	backdrop-filter: blur(4px);
+}
+.code_copy .code-copy-icon { font-size: 13px; transform: translateY(-1px); }
+.code_copy .code-copy-text { font-size: 12px; }
+.code_copy:hover {
+	background: linear-gradient(135deg,#e5ecff,#d4e2ff);
+	box-shadow: 0 4px 10px -2px rgba(0,0,0,.18);
+	transform: translateY(-2px);
+	color: #ffffff;
+}
+.code_copy.is-copied { 
+	background: linear-gradient(135deg,#34d399,#10b981);
+	border-color: #059669;
+	box-shadow: 0 3px 10px -2px rgba(16,185,129,.45);
+}
+.code_copy.is-copied .code-copy-icon { transform: translateY(-1px) scale(1.05); }
+.code_copy.is-copied .code-copy-text { letter-spacing: 1px; }
+.code_copy:active { transform: translateY(0) scale(.95); }
+.code_copy:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 2px; }
+
+/* Dark mode copy button */
+body.DarkMode .code_copy { 
+	background: linear-gradient(135deg,#313d52,#384762); 
+	border: 1px solid #465675; 
+	color: #ffffff; 
+	box-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+body.DarkMode .code_copy:hover { 
+	background: linear-gradient(135deg,#3b4a60,#425372); 
+	box-shadow: 0 4px 12px -2px rgba(0,0,0,.55);
+	color: #ffffff;
+}
+body.DarkMode .code_copy.is-copied { background: linear-gradient(135deg,#059669,#047857); border-color:#047857; }
+
+@media (prefers-color-scheme: dark) {
+		body:not(.force-light) .code_copy { 
+			background: linear-gradient(135deg,#313d52,#384762); 
+			border: 1px solid #465675; 
+			color: #ffffff; 
+		}
+		body:not(.force-light) .code_copy:hover { 
+			background: linear-gradient(135deg,#3b4a60,#425372); 
+			color: #ffffff; 
+		}
+			body:not(.force-light) .code_copy.is-copied { background: linear-gradient(135deg,#059669,#047857); border-color:#047857; }
+}
+
+/* 复制提示浮层 */
+.codecopy_notice {
+	position: absolute;
+	top: 8px;
+	right: 120px; /* 留出更长按钮空间 */
+	z-index: 21;
+	background: rgba(0,0,0,.55);
+	color: #fff;
+	padding: 4px 12px 5px;
+	border-radius: 6px;
+	font-size: 12px;
+	line-height: 1.1;
+	font-weight: 500;
+	pointer-events: none;
+	opacity: 0;
+	transform: translateY(-4px) scale(.95);
+	backdrop-filter: blur(4px);
+	transition: opacity .35s ease, transform .35s ease;
+	white-space: nowrap;
+}
+.codecopy_notice.is-active { opacity: 1; transform: translateY(0) scale(1); }
+body.DarkMode .codecopy_notice { background: rgba(50,55,70,.7); }
+@media (prefers-color-scheme: dark) { body:not(.force-light) .codecopy_notice { background: rgba(50,55,70,.7); } }
+
+/* 6. 语法高亮（针对 Prism 或 highlight.js 的常见类） */
+/* 6. Tokyo Night 语法配色（浅色模式淡化版） */
+code .token.comment, code .hljs-comment { color: var(--code-comment); font-style: italic; }
+code .token.keyword, code .hljs-keyword { color: var(--tokyo-magenta); }
+code .token.string, code .hljs-string { color: var(--code-string); }
+code .token.function, code .hljs-function { color: var(--tokyo-blue); }
+code .token.number, code .hljs-number { color: var(--tokyo-orange); }
+code .token.boolean { color: var(--tokyo-orange); }
+code .token.operator, code .hljs-operator { color: var(--tokyo-red); }
+code .token.class-name { color: var(--tokyo-yellow); }
+code .token.constant { color: var(--tokyo-cyan); }
+code .token.builtin { color: var(--tokyo-green); }
+code .token.deleted { color: var(--code-del); }
+code .token.inserted { color: var(--code-add); }
+
+/* 7. Diff 行提示（可选）*/
+pre code .diff-add, pre code .hljs-addition { background: rgba(46,160,67,.12); display: block; margin: 0 -1.2rem; padding: 0 1.2rem; }
+pre code .diff-del, pre code .hljs-deletion { background: rgba(248,81,73,.12); display: block; margin: 0 -1.2rem; padding: 0 1.2rem; }
+
+/* 8. 深色模式（主题暗色 class 可能是 .DarkMode；也兼容用户系统偏好） */
+/* 深色模式：主题自身 DarkMode 类 和 系统偏好 dark */
+body.DarkMode #articleContent pre {
+	background: var(--code-bg-dark);
+	border-color: var(--code-border-dark);
+	box-shadow: var(--code-shadow-dark);
+}
+body.DarkMode #articleContent pre code { color: var(--code-text-dark); }
+body.DarkMode #articleContent p code,
+body.DarkMode #articleContent li code,
+body.DarkMode #articleContent h2 code,
+body.DarkMode #articleContent h3 code,
+body.DarkMode #articleContent table code {
+	background: var(--code-inline-bg-dark);
+	color: var(--code-inline-text-dark);
+	border-color: #3a3a3a;
+}
+
+@media (prefers-color-scheme: dark) {
+	body:not(.force-light) #articleContent pre {
+		background: var(--code-bg-dark);
+		border-color: var(--code-border-dark);
+		box-shadow: var(--code-shadow-dark);
+	}
+	body:not(.force-light) #articleContent pre code {
+		color: var(--code-text-dark);
+	}
+	body:not(.force-light) #articleContent p code,
+	body:not(.force-light) #articleContent li code,
+	body:not(.force-light) #articleContent h2 code,
+	body:not(.force-light) #articleContent h3 code,
+	body:not(.force-light) #articleContent table code {
+		background: var(--code-inline-bg-dark);
+		color: var(--code-inline-text-dark);
+		border-color: #3a3a3a;
+	}
+	/* 深色高亮颜色微调 */
+		body:not(.force-light) code .token.comment { color: var(--tokyo-comment); }
+		body:not(.force-light) code .token.keyword { color: var(--tokyo-magenta); }
+		body:not(.force-light) code .token.string { color: var(--tokyo-green); }
+		body:not(.force-light) code .token.function { color: var(--tokyo-blue); }
+		body:not(.force-light) code .token.number { color: var(--tokyo-orange); }
+		body:not(.force-light) code .token.operator { color: var(--tokyo-red); }
+		body:not(.force-light) code .token.class-name { color: var(--tokyo-yellow); }
+}
+
+/* 9. 滚动条（代码块内）精致化 */
+#articleContent pre::-webkit-scrollbar { height: 10px; }
+#articleContent pre::-webkit-scrollbar-track { background: transparent; }
+#articleContent pre::-webkit-scrollbar-thumb { background: #c2c2c2; border-radius: 6px; }
+body.DarkMode #articleContent pre::-webkit-scrollbar-thumb { background: #4a4a4a; }
+
+/* 10. 避免已有主题给 code 再次加的 filter */
+body.DarkMode pre code { filter: none !important; }
+
+/* 11. 复制提示优化（主题已有 .codecopy_notice）*/
+.codecopy_notice { background: rgba(0,0,0,.65); color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+
+/* 12. 如果 highlight.js 没有按 token 分行，可以追加行高 */
+#articleContent pre code { line-height: 1.5; }
+
+/* 13. 防止内联 code 被暗色主题全局 filter 洗掉颜色 */
+body.DarkMode #articleContent p code { filter: none !important; }

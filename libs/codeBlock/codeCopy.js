@@ -1,7 +1,12 @@
 // 代码块一键复制
 
 $(function () {
-    var $copyIcon = $('<i class="fas fa-copy code_copy" title="复制代码" aria-hidden="true"></i>')
+    var $copyIcon = $(
+        '<button class="code_copy" type="button" title="复制代码" aria-label="复制代码">\n' +
+        '  <span class="code-copy-icon" aria-hidden="true">📋</span>\n' +
+        '  <span class="code-copy-text">复制代码</span>\n' +
+        '</button>'
+    )
     var $notice = $('<div class="codecopy_notice"></div>')
     $('.code-area').prepend($copyIcon)
     $('.code-area').prepend($notice)
@@ -44,7 +49,7 @@ $(function () {
         }
     }
     // 复制
-    $('.code-area .fa-copy').on('click', function () {
+    $('.code-area .code_copy').on('click', function () {
         var selection = window.getSelection()
         var range = document.createRange()
         range.selectNodeContents($(this).siblings('pre').find('code')[0])
@@ -53,5 +58,15 @@ $(function () {
         var text = selection.toString()
         copy(text, this)
         selection.removeAllRanges()
+        var $btn = $(this)
+        if(!$btn.hasClass('is-copied')) {
+            var original = $btn.find('.code-copy-text').text()
+            $btn.addClass('is-copied')
+                .find('.code-copy-text').text('已复制')
+            setTimeout(function(){
+                $btn.removeClass('is-copied')
+                    .find('.code-copy-text').text(original)
+            }, 1200)
+        }
     })
 });
