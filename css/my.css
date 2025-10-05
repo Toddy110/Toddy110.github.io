@@ -230,3 +230,45 @@ body.DarkMode pre code { filter: none !important; }
 
 /* 13. 防止内联 code 被暗色主题全局 filter 洗掉颜色 */
 body.DarkMode #articleContent p code { filter: none !important; }
+
+/* 14. Prism 行号放在左侧，统一配色 */
+/* 预留左侧空间给行号 */
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 3.2em !important; /* 行号宽度 */
+	padding-right: 1.2rem !important; /* 右侧保持默认内边距 */
+}
+pre[class*="language-"].line-numbers > code { position: relative; }
+
+/* 将行号容器固定到左侧 */
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	left: 0;      /* 左侧对齐 */
+	right: auto !important;
+	width: 3.2em;  /* 与上面的 padding-left 一致 */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	text-align: right; /* 数字靠近代码 */
+	color: var(--code-comment);                 /* 浅色模式行号颜色 */
+	border-right: 1px solid var(--code-border-light);
+	border-left: none !important;              /* 禁用左边框 */
+}
+.line-numbers-rows > span::before { color: inherit; }
+
+/* 深色模式行号配色 */
+body.DarkMode .line-numbers .line-numbers-rows {
+	color: var(--tokyo-comment);
+	border-right: 1px solid var(--code-border-dark);
+}
+@media (prefers-color-scheme: dark) {
+	body:not(.force-light) .line-numbers .line-numbers-rows {
+		color: var(--tokyo-comment);
+		border-right: 1px solid var(--code-border-dark);
+	}
+}
+
+/* 15. 复制按钮恢复靠右对齐（无须避开行号） */
+.code_copy { right: 10px; }
