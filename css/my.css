@@ -51,8 +51,7 @@
 	background: transparent !important;
 	color: var(--code-text-light);
 	font-size: 0.92rem;
-	font-family: 'JetBrainsMono','Fira Code', Menlo, Consolas, Monaco, 'Courier New', monospace;
-	font-weight: 450;
+	/* revert font-family to theme default */
 }
 
 /* 避免某些主题把代码块内的 class/def 解析成 h1/h2 样式导致“大字” */
@@ -272,3 +271,37 @@ body.DarkMode .line-numbers .line-numbers-rows {
 
 /* 15. 复制按钮恢复靠右对齐（无须避开行号） */
 .code_copy { right: 10px; }
+
+/* 0. Global typography: popular, performant font stacks */
+:root {
+	/* Modern sans-serif with robust CJK fallbacks (no webfont required) */
+	--font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+							 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "HarmonyOS Sans SC",
+							 "Noto Sans SC", "Source Han Sans SC", "MiSans", "WenQuanYi Micro Hei", sans-serif;
+	/* Headings slightly more display-oriented; same fallbacks for consistency */
+	--font-heading: Inter, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+									"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "HarmonyOS Sans SC",
+									"Noto Sans SC", "Source Han Sans SC", "MiSans", "WenQuanYi Micro Hei", sans-serif;
+	/* Popular monospaced code fonts with CJK-capable fallbacks */
+	--font-mono: "JetBrains Mono", JetBrainsMono, "Cascadia Code", "Fira Code", "SFMono-Regular",
+							 Menlo, Consolas, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Sarasa Mono SC",
+							 "Noto Sans Mono", "Courier New", monospace;
+}
+
+/* Body & article text */
+body { 
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+#articleContent, .post-content { font-family: var(--font-sans); }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+#articleContent h1, #articleContent h2, #articleContent h3,
+#articleContent h4, #articleContent h5, #articleContent h6 {
+	font-family: var(--font-heading);
+}
+
+/* Code blocks: prefer high-quality monospaced fonts, include CJK-friendly fallback */
+/* Use theme's default code font-family */
