@@ -51,7 +51,8 @@
 	background: transparent !important;
 	color: var(--code-text-light);
 	font-size: 0.92rem;
-	/* revert font-family to theme default */
+	font-family: 'JetBrainsMono','Fira Code', Menlo, Consolas, Monaco, 'Courier New', monospace;
+	font-weight: 450;
 }
 
 /* 避免某些主题把代码块内的 class/def 解析成 h1/h2 样式导致“大字” */
@@ -86,41 +87,62 @@
 .code_lang, .code-expand { display: none !important; }
 
 /* 复制按钮：增强可见性（带文字“复制”）*/
- .code_copy {
+.code_copy {
 	position: absolute;
-	top: 6px;
-	right: 10px;
+	top: 8px;
+	right: 12px;
 	z-index: 20;
-	display: inline-block;
-	font-size: 11px;
-	font-weight: 500;
-	padding: 4px 10px 4px 10px;
-	border-radius: 6px;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 8px;
 	cursor: pointer;
 	line-height: 1;
+	letter-spacing: .5px;
 	user-select: none;
-	background: rgba(0,0,0,.55);
-	color: #fff !important;
-	border: 1px solid rgba(255,255,255,.25);
-	box-shadow: 0 2px 6px rgba(0,0,0,.15);
-	transition: background .2s ease, box-shadow .25s ease, transform .18s ease;
-	font-family: system-ui, "Helvetica Neue", Arial, sans-serif;
-	letter-spacing: .25px;
+	background: linear-gradient(135deg,#eef4ff,#d9e7ff 55%,#cddfff);
+	border: 1px solid #b2c4ff;
+	color: #2f3b52;
+	box-shadow: 0 2px 5px rgba(0,0,0,.06), 0 4px 12px -4px rgba(0,0,0,.12);
+	transition: background .25s ease, box-shadow .25s ease, transform .2s ease, color .25s, border-color .25s;
+	backdrop-filter: blur(4px);
 }
-.code_copy:hover { background: rgba(0,0,0,.7); transform: translateY(-2px); }
-.code_copy.is-copied { background: #059669; border-color:#059669; }
+.code_copy::before { content: "📋"; font-size: 13px; transform: translateY(-1px); }
+.code_copy::after { content: "复制代码"; }
+.code_copy:hover {
+	background: linear-gradient(135deg,#fff,#e8eeff);
+	box-shadow: 0 4px 10px -2px rgba(0,0,0,.18);
+	transform: translateY(-2px);
+}
 .code_copy:active { transform: translateY(0) scale(.95); }
 .code_copy:focus-visible { outline: 2px solid #7aa2f7; outline-offset: 2px; }
 
 /* Dark mode copy button */
-body.DarkMode .code_copy { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; }
-body.DarkMode .code_copy:hover { background: rgba(255,255,255,.18); }
-body.DarkMode .code_copy.is-copied { background:#059669; border-color:#059669; }
+body.DarkMode .code_copy { 
+	background: linear-gradient(135deg,#283144,#303b52); 
+	border: 1px solid #3d4a60; 
+	color: #d3d9e5; 
+	box-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+body.DarkMode .code_copy:hover { 
+	background: linear-gradient(135deg,#334154,#3b4860); 
+	box-shadow: 0 4px 12px -2px rgba(0,0,0,.55);
+	color: #eef4ff;
+}
 
 @media (prefers-color-scheme: dark) {
-			body:not(.force-light) .code_copy { background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; }
-			body:not(.force-light) .code_copy:hover { background: rgba(255,255,255,.18); }
-			body:not(.force-light) .code_copy.is-copied { background:#059669; border-color:#059669; }
+	body:not(.force-light) .code_copy { 
+		background: linear-gradient(135deg,#283144,#303b52); 
+		border: 1px solid #3d4a60; 
+		color: #d3d9e5; 
+	}
+	body:not(.force-light) .code_copy:hover { 
+		background: linear-gradient(135deg,#334154,#3b4860); 
+		color: #eef4ff; 
+	}
 }
 
 /* 复制提示浮层 */
@@ -230,78 +252,121 @@ body.DarkMode pre code { filter: none !important; }
 /* 13. 防止内联 code 被暗色主题全局 filter 洗掉颜色 */
 body.DarkMode #articleContent p code { filter: none !important; }
 
-/* 14. Prism 行号放在左侧，统一配色 */
-/* 预留左侧空间给行号 */
-pre[class*="language-"].line-numbers {
-	position: relative;
-	padding-left: 3.2em !important; /* 行号宽度 */
-	padding-right: 1.2rem !important; /* 右侧保持默认内边距 */
-}
-pre[class*="language-"].line-numbers > code { position: relative; }
+/* ========================================
+   清新色彩主题 - 覆盖主题原有艳丽颜色
+   ======================================== */
 
-/* 将行号容器固定到左侧 */
-.line-numbers .line-numbers-rows {
-	position: absolute;
-	pointer-events: none;
-	top: 0;
-	left: 0;      /* 左侧对齐 */
-	right: auto !important;
-	width: 3.2em;  /* 与上面的 padding-left 一致 */
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-	text-align: right; /* 数字靠近代码 */
-	color: var(--code-comment);                 /* 浅色模式行号颜色 */
-	border-right: 1px solid var(--code-border-light);
-	border-left: none !important;              /* 禁用左边框 */
-}
-.line-numbers-rows > span::before { color: inherit; }
-
-/* 深色模式行号配色 */
-body.DarkMode .line-numbers .line-numbers-rows {
-	color: var(--tokyo-comment);
-	border-right: 1px solid var(--code-border-dark);
-}
-@media (prefers-color-scheme: dark) {
-	body:not(.force-light) .line-numbers .line-numbers-rows {
-		color: var(--tokyo-comment);
-		border-right: 1px solid var(--code-border-dark);
-	}
-}
-
-/* 15. 复制按钮恢复靠右对齐（无须避开行号） */
-.code_copy { right: 10px; }
-
-/* 0. Global typography: popular, performant font stacks */
+/* 主色调：薄荷绿、天空蓝、淡紫灰 */
 :root {
-	/* Modern sans-serif with robust CJK fallbacks (no webfont required) */
-	--font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-							 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "HarmonyOS Sans SC",
-							 "Noto Sans SC", "Source Han Sans SC", "MiSans", "WenQuanYi Micro Hei", sans-serif;
-	/* Headings slightly more display-oriented; same fallbacks for consistency */
-	--font-heading: Inter, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial,
-									"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "HarmonyOS Sans SC",
-									"Noto Sans SC", "Source Han Sans SC", "MiSans", "WenQuanYi Micro Hei", sans-serif;
-	/* Popular monospaced code fonts with CJK-capable fallbacks */
-	--font-mono: "JetBrains Mono", JetBrainsMono, "Cascadia Code", "Fira Code", "SFMono-Regular",
-							 Menlo, Consolas, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Sarasa Mono SC",
-							 "Noto Sans Mono", "Courier New", monospace;
+    --fresh-primary: #6BC4A6;      /* 薄荷绿 */
+    --fresh-secondary: #7FD8BE;    /* 浅薄荷绿 */
+    --fresh-accent: #87CEEB;       /* 天空蓝 */
+    --fresh-light: #E0F7F4;        /* 极浅薄荷色 */
+    --fresh-pale: #F0FDFA;         /* 浅色背景 */
+    --fresh-text: #475569;         /* 柔和文字色 */
 }
 
-/* Body & article text */
-body { 
-	font-family: var(--font-sans);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-#articleContent, .post-content { font-family: var(--font-sans); }
-
-/* Headings */
-h1, h2, h3, h4, h5, h6,
-#articleContent h1, #articleContent h2, #articleContent h3,
-#articleContent h4, #articleContent h5, #articleContent h6 {
-	font-family: var(--font-heading);
+/* 覆盖主题的紫色渐变 -> 薄荷绿渐变 */
+.bg-gradient-primary,
+.card-gradient-primary,
+.bg-color-primary {
+    background: linear-gradient(to right, var(--fresh-primary) 0%, var(--fresh-secondary) 100%) !important;
 }
 
-/* Code blocks: prefer high-quality monospaced fonts, include CJK-friendly fallback */
-/* Use theme's default code font-family */
+/* 覆盖文章引用块的紫色边框 -> 薄荷绿 */
+blockquote {
+    border-left: 5px solid var(--fresh-primary) !important;
+    background-color: var(--fresh-light) !important;
+}
+
+/* 覆盖按钮的紫/橙渐变 -> 薄荷绿渐变 */
+.btn-primary,
+.btn-default,
+button[type="submit"] {
+    background: linear-gradient(to right, var(--fresh-primary) 0%, var(--fresh-secondary) 100%) !important;
+}
+
+.btn-primary:hover,
+.btn-default:hover,
+button[type="submit"]:hover {
+    background: linear-gradient(to right, var(--fresh-secondary) 0%, var(--fresh-primary) 100%) !important;
+}
+
+/* 覆盖标签的颜色 -> 柔和的蓝绿色 */
+.badge,
+.tag,
+.post-category,
+.post-tag {
+    background-color: var(--fresh-accent) !important;
+    color: #fff !important;
+}
+
+/* 覆盖首页卡片的高亮颜色 -> 薄荷绿系 */
+.card {
+    border-top: 3px solid var(--fresh-primary) !important;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(107, 196, 166, 0.2) !important;
+}
+
+/* 覆盖code区域的背景色 -> 更柔和的淡蓝灰 */
+pre {
+    background-color: #F5FAFA !important;
+    border-left: 4px solid var(--fresh-accent) !important;
+}
+
+/* 覆盖复制按钮的颜色 */
+.code_copy {
+    background: linear-gradient(135deg, #E0F7F4, #D4F1EC) !important;
+    border: 1px solid var(--fresh-primary) !important;
+    color: var(--fresh-primary) !important;
+}
+
+.code_copy:hover {
+    background: linear-gradient(135deg, var(--fresh-light), #D4F1EC) !important;
+    box-shadow: 0 4px 12px rgba(107, 196, 166, 0.25) !important;
+}
+
+/* 覆盖滚动条颜色 -> 薄荷绿系 */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--fresh-primary), var(--fresh-secondary)) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fresh-secondary) !important;
+}
+
+/* 覆盖阅读进度条颜色 */
+.read-progress {
+    background: linear-gradient(to right, var(--fresh-primary), var(--fresh-accent)) !important;
+}
+
+/* 覆盖返回顶部按钮的颜色 */
+#scrollUp {
+    background: var(--fresh-primary) !important;
+}
+
+#scrollUp:hover {
+    background: var(--fresh-secondary) !important;
+}
+
+/* 覆盖分页按钮颜色 */
+.pagination li.active a {
+    background-color: var(--fresh-primary) !important;
+}
+
+.pagination li a:hover {
+    background-color: var(--fresh-light) !important;
+    color: var(--fresh-primary) !important;
+}
+
+/* 淡化学术色彩，让整体更清爽 */
+body {
+    background-color: #FAFDFC !important; /* 极淡的灰绿背景 */
+}
+
+/* 覆盖footer背景色 */
+footer {
+    background-color: #F0FDFA !important;
+}
