@@ -256,12 +256,12 @@ body.DarkMode #articleContent p code { filter: none !important; }
    清新色彩主题 - 覆盖主题原有艳丽颜色
    ======================================== */
 
-/* 主色调：薄荷绿、天空蓝、淡紫灰 */
+/* 主色调：白色、天空蓝 */
 :root {
-    --fresh-primary: #6BC4A6;      /* 薄荷绿 */
-    --fresh-secondary: #7FD8BE;    /* 浅薄荷绿 */
+    --fresh-primary: #FFFFFF;      /* 白色 */
+    --fresh-secondary: #F8F9FA;    /* 极浅灰色 */
     --fresh-accent: #87CEEB;       /* 天空蓝 */
-    --fresh-light: #E0F7F4;        /* 极浅薄荷色 */
+    --fresh-light: #FFFFFF;        /* 白色 */
     --fresh-pale: #F0FDFA;         /* 浅色背景 */
     --fresh-text: #475569;         /* 柔和文字色 */
 }
@@ -273,10 +273,10 @@ body.DarkMode #articleContent p code { filter: none !important; }
     background: linear-gradient(to right, var(--fresh-primary) 0%, var(--fresh-secondary) 100%) !important;
 }
 
-/* 覆盖文章引用块的紫色边框 -> 薄荷绿 */
+/* 覆盖文章引用块的紫色边框 -> 白色 */
 blockquote {
-    border-left: 5px solid var(--fresh-primary) !important;
-    background-color: var(--fresh-light) !important;
+    border-left: 5px solid #E8E8E8 !important;
+    background-color: #FAFAFA !important;
 }
 
 /* 覆盖按钮的紫/橙渐变 -> 薄荷绿渐变 */
@@ -301,13 +301,13 @@ button[type="submit"]:hover {
     color: #fff !important;
 }
 
-/* 覆盖首页卡片的高亮颜色 -> 薄荷绿系 */
+/* 覆盖首页卡片的高亮颜色 -> 白色系 */
 .card {
-    border-top: 3px solid var(--fresh-primary) !important;
+    border-top: 3px solid #E8E8E8 !important;
 }
 
 .card:hover {
-    box-shadow: 0 4px 12px rgba(107, 196, 166, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* 覆盖code区域的背景色 -> 更柔和的淡蓝灰 */
@@ -318,55 +318,55 @@ pre {
 
 /* 覆盖复制按钮的颜色 */
 .code_copy {
-    background: linear-gradient(135deg, #E0F7F4, #D4F1EC) !important;
-    border: 1px solid var(--fresh-primary) !important;
-    color: var(--fresh-primary) !important;
+    background: linear-gradient(135deg, #F5F5F5, #E8E8E8) !important;
+    border: 1px solid #E8E8E8 !important;
+    color: #666 !important;
 }
 
 .code_copy:hover {
-    background: linear-gradient(135deg, var(--fresh-light), #D4F1EC) !important;
-    box-shadow: 0 4px 12px rgba(107, 196, 166, 0.25) !important;
+    background: linear-gradient(135deg, #FFFFFF, #F5F5F5) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* 覆盖滚动条颜色 -> 薄荷绿系 */
+/* 覆盖滚动条颜色 -> 白色系 */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, var(--fresh-primary), var(--fresh-secondary)) !important;
+    background: linear-gradient(to bottom, #D0D0D0, #E0E0E0) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--fresh-secondary) !important;
+    background: #C0C0C0 !important;
 }
 
 /* 覆盖阅读进度条颜色 */
 .read-progress {
-    background: linear-gradient(to right, var(--fresh-primary), var(--fresh-accent)) !important;
+    background: linear-gradient(to right, #D0D0D0, var(--fresh-accent)) !important;
 }
 
 /* 覆盖返回顶部按钮的颜色 */
 #scrollUp {
-    background: var(--fresh-primary) !important;
+    background: #F0F0F0 !important;
 }
 
 #scrollUp:hover {
-    background: var(--fresh-secondary) !important;
+    background: #E0E0E0 !important;
 }
 
 /* 覆盖分页按钮颜色 */
 .pagination li.active a {
-    background-color: var(--fresh-primary) !important;
+    background-color: #E0E0E0 !important;
 }
 
 .pagination li a:hover {
-    background-color: var(--fresh-light) !important;
-    color: var(--fresh-primary) !important;
+    background-color: #F5F5F5 !important;
+    color: #333 !important;
 }
 
 /* 淡化学术色彩，让整体更清爽 */
 body {
-    background-color: #FAFDFC !important; /* 极淡的灰绿背景 */
+    background-color: #FFFFFF !important; /* 纯白背景 */
 }
 
 /* 覆盖footer背景色 */
 footer {
-    background-color: #F0FDFA !important;
+    background-color: #FAFAFA !important;
 }
