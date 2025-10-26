@@ -256,13 +256,13 @@ body.DarkMode #articleContent p code { filter: none !important; }
    清新色彩主题 - 覆盖主题原有艳丽颜色
    ======================================== */
 
-/* 主色调：白色、天空蓝 */
+/* 主色调：白色、灰色 */
 :root {
     --fresh-primary: #FFFFFF;      /* 白色 */
     --fresh-secondary: #F8F9FA;    /* 极浅灰色 */
-    --fresh-accent: #87CEEB;       /* 天空蓝 */
+    --fresh-accent: #D0D0D0;       /* 灰色 */
     --fresh-light: #FFFFFF;        /* 白色 */
-    --fresh-pale: #F0FDFA;         /* 浅色背景 */
+    --fresh-pale: #F5F5F5;         /* 浅灰背景 */
     --fresh-text: #475569;         /* 柔和文字色 */
 }
 
@@ -292,13 +292,13 @@ button[type="submit"]:hover {
     background: linear-gradient(to right, var(--fresh-secondary) 0%, var(--fresh-primary) 100%) !important;
 }
 
-/* 覆盖标签的颜色 -> 柔和的蓝绿色 */
+/* 覆盖标签的颜色 -> 灰白色 */
 .badge,
 .tag,
 .post-category,
 .post-tag {
-    background-color: var(--fresh-accent) !important;
-    color: #fff !important;
+    background-color: #E8E8E8 !important;
+    color: #666 !important;
 }
 
 /* 覆盖首页卡片的高亮颜色 -> 白色系 */
@@ -312,8 +312,8 @@ button[type="submit"]:hover {
 
 /* 覆盖code区域的背景色 -> 更柔和的淡蓝灰 */
 pre {
-    background-color: #F5FAFA !important;
-    border-left: 4px solid var(--fresh-accent) !important;
+    background-color: #F5F5F5 !important;
+    border-left: 4px solid #D0D0D0 !important;
 }
 
 /* 覆盖复制按钮的颜色 */
@@ -339,7 +339,7 @@ pre {
 
 /* 覆盖阅读进度条颜色 */
 .read-progress {
-    background: linear-gradient(to right, #D0D0D0, var(--fresh-accent)) !important;
+    background: linear-gradient(to right, #D0D0D0, #B0B0B0) !important;
 }
 
 /* 覆盖返回顶部按钮的颜色 */
