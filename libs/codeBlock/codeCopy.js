@@ -1,7 +1,7 @@
 // 代码块一键复制
 
 $(function () {
-    var $copyIcon = $('<button class="code_copy" type="button" title="复制代码" aria-label="复制代码">复制代码</button>')
+    var $copyIcon = $('<button class="code_copy" type="button" title="复制代码" aria-label="复制代码">复制</button>')
     var $notice = $('<div class="codecopy_notice"></div>')
     $('.code-area').prepend($copyIcon)
     $('.code-area').prepend($notice)

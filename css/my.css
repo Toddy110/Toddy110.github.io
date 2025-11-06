@@ -5,17 +5,20 @@
 :root {
 	--code-bg-light: #f5f7fa; /* 浅背景防刺眼 */
 	--code-border-light: #e2e8f0;
-	--code-text-light: #2e3440;
+	--code-text-light: #1f2937; /* 提升对比度 */
 	--code-inline-bg: #eef2f7;
 	--code-inline-text: #c7254e;
 	--code-accent: #7aa2f7; /* 关键色 */
 	--code-add: #449d48;
 	--code-del: #c34043;
-	--code-keyword: #9d7cd8; /* 关键字 */
-	--code-string: #587539; /* 字符串 (light tone) */
-	--code-func: #7aa2f7;
-	--code-number: #b15c00;
-	--code-comment: #8292a2;
+	/* 亮色模式更高对比的 token 颜色 */
+	--code-keyword: #5b21b6; /* 深靛紫 */
+	--code-string: #047857; /* 深绿 */
+	--code-func: #0ea5e9;   /* 青蓝 */
+	--code-number: #b45309; /* 琥珀棕 */
+	--code-operator: #dc2626; /* 红 */
+	--code-punctuation: #334155; /* 标点/符号（更可见） */
+	--code-comment: #475569; /* 深灰蓝，提升可读性 */
 
 	--code-bg-dark: #1a1b26; /* Tokyo Night 深背景 */
 	--code-border-dark: #2e3240;
@@ -31,6 +34,10 @@
 	--tokyo-blue: #7aa2f7;
 	--tokyo-magenta: #bb9af7;
 	--tokyo-comment: #565f89;
+
+	/* 深色模式下符号/运算符更亮一些 */
+	--code-operator-dark: #ff6b6b; /* 更亮的红，提升对比 */
+	--code-punctuation-dark: #cbd5e1; /* 亮灰蓝，保证可读性 */
 }
 
 /* 2. 去除主题默认“Mac 三色圆点” */
@@ -89,29 +96,29 @@
 /* 复制按钮：增强可见性（带文字“复制”）*/
 .code_copy {
 	position: absolute;
-	top: 8px;
-	right: 12px;
+	top: 6px;
+	right: 6px;
 	z-index: 20;
 	display: inline-flex;
 	align-items: center;
-	gap: 6px;
-	font-size: 12px;
+	gap: 2px;
+	font-size: 11px; /* 显示短文本“复制” */
 	font-weight: 600;
-	padding: 6px 14px;
-	border-radius: 8px;
+	padding: 2px 6px;
+	border-radius: 6px;
 	cursor: pointer;
 	line-height: 1;
 	letter-spacing: .5px;
 	user-select: none;
 	background: linear-gradient(135deg,#eef4ff,#d9e7ff 55%,#cddfff);
 	border: 1px solid #b2c4ff;
-	color: #2f3b52;
+	color: #1f2937; /* 强制文本与背景对比 */
 	box-shadow: 0 2px 5px rgba(0,0,0,.06), 0 4px 12px -4px rgba(0,0,0,.12);
 	transition: background .25s ease, box-shadow .25s ease, transform .2s ease, color .25s, border-color .25s;
 	backdrop-filter: blur(4px);
 }
-.code_copy::before { content: "📋"; font-size: 13px; transform: translateY(-1px); }
-.code_copy::after { content: "复制代码"; }
+.code_copy::before { content: ""; }
+.code_copy::after { content: ""; }
 .code_copy:hover {
 	background: linear-gradient(135deg,#fff,#e8eeff);
 	box-shadow: 0 4px 10px -2px rgba(0,0,0,.18);
@@ -148,14 +155,14 @@ body.DarkMode .code_copy:hover {
 /* 复制提示浮层 */
 .codecopy_notice {
 	position: absolute;
-	top: 8px;
-	right: 120px; /* 留出更长按钮空间 */
+	top: 6px;
+	right: 56px; /* 仅图标按钮后进一步收紧 */
 	z-index: 21;
 	background: rgba(0,0,0,.55);
 	color: #fff;
-	padding: 4px 12px 5px;
-	border-radius: 6px;
-	font-size: 12px;
+	padding: 3px 8px 4px;
+	border-radius: 5px;
+	font-size: 11px;
 	line-height: 1.1;
 	font-weight: 500;
 	pointer-events: none;
@@ -170,17 +177,18 @@ body.DarkMode .codecopy_notice { background: rgba(50,55,70,.7); }
 @media (prefers-color-scheme: dark) { body:not(.force-light) .codecopy_notice { background: rgba(50,55,70,.7); } }
 
 /* 6. 语法高亮（针对 Prism 或 highlight.js 的常见类） */
-/* 6. Tokyo Night 语法配色（浅色模式淡化版） */
+/* 6. 亮色模式高对比语法配色 */
 code .token.comment, code .hljs-comment { color: var(--code-comment); font-style: italic; }
-code .token.keyword, code .hljs-keyword { color: var(--tokyo-magenta); }
+code .token.keyword, code .hljs-keyword { color: var(--code-keyword); font-weight: 600; }
 code .token.string, code .hljs-string { color: var(--code-string); }
-code .token.function, code .hljs-function { color: var(--tokyo-blue); }
-code .token.number, code .hljs-number { color: var(--tokyo-orange); }
-code .token.boolean { color: var(--tokyo-orange); }
-code .token.operator, code .hljs-operator { color: var(--tokyo-red); }
-code .token.class-name { color: var(--tokyo-yellow); }
-code .token.constant { color: var(--tokyo-cyan); }
-code .token.builtin { color: var(--tokyo-green); }
+code .token.function, code .hljs-function { color: var(--code-func); }
+code .token.number, code .hljs-number { color: var(--code-number); }
+code .token.boolean { color: var(--code-number); }
+code .token.operator, code .hljs-operator { color: var(--code-operator); }
+code .token.punctuation, code .hljs-punctuation { color: var(--code-punctuation); }
+code .token.class-name { color: #1d4ed8; }
+code .token.constant { color: #0891b2; }
+code .token.builtin { color: #0ea5e9; }
 code .token.deleted { color: var(--code-del); }
 code .token.inserted { color: var(--code-add); }
 
@@ -196,6 +204,15 @@ body.DarkMode #articleContent pre {
 	box-shadow: var(--code-shadow-dark);
 }
 body.DarkMode #articleContent pre code { color: var(--code-text-dark); }
+/* 深色模式下的 token 颜色（通过 DarkMode 类直接启用） */
+body.DarkMode code .token.comment, body.DarkMode code .hljs-comment { color: var(--tokyo-comment); }
+body.DarkMode code .token.keyword, body.DarkMode code .hljs-keyword { color: var(--tokyo-magenta); }
+body.DarkMode code .token.string, body.DarkMode code .hljs-string { color: var(--tokyo-green); }
+body.DarkMode code .token.function, body.DarkMode code .hljs-function { color: var(--tokyo-blue); }
+body.DarkMode code .token.number, body.DarkMode code .hljs-number { color: var(--tokyo-orange); }
+body.DarkMode code .token.operator, body.DarkMode code .hljs-operator { color: var(--code-operator-dark); }
+body.DarkMode code .token.punctuation, body.DarkMode code .hljs-punctuation { color: var(--code-punctuation-dark); }
+body.DarkMode code .token.class-name { color: var(--tokyo-yellow); }
 body.DarkMode #articleContent p code,
 body.DarkMode #articleContent li code,
 body.DarkMode #articleContent h2 code,
@@ -225,12 +242,13 @@ body.DarkMode #articleContent table code {
 		border-color: #3a3a3a;
 	}
 	/* 深色高亮颜色微调 */
-		body:not(.force-light) code .token.comment { color: var(--tokyo-comment); }
-		body:not(.force-light) code .token.keyword { color: var(--tokyo-magenta); }
-		body:not(.force-light) code .token.string { color: var(--tokyo-green); }
-		body:not(.force-light) code .token.function { color: var(--tokyo-blue); }
-		body:not(.force-light) code .token.number { color: var(--tokyo-orange); }
-		body:not(.force-light) code .token.operator { color: var(--tokyo-red); }
+		body:not(.force-light) code .token.comment, body:not(.force-light) code .hljs-comment { color: var(--tokyo-comment); }
+		body:not(.force-light) code .token.keyword, body:not(.force-light) code .hljs-keyword { color: var(--tokyo-magenta); }
+		body:not(.force-light) code .token.string, body:not(.force-light) code .hljs-string { color: var(--tokyo-green); }
+		body:not(.force-light) code .token.function, body:not(.force-light) code .hljs-function { color: var(--tokyo-blue); }
+		body:not(.force-light) code .token.number, body:not(.force-light) code .hljs-number { color: var(--tokyo-orange); }
+		body:not(.force-light) code .token.operator, body:not(.force-light) code .hljs-operator { color: var(--code-operator-dark); }
+		body:not(.force-light) code .token.punctuation, body:not(.force-light) code .hljs-punctuation { color: var(--code-punctuation-dark); }
 		body:not(.force-light) code .token.class-name { color: var(--tokyo-yellow); }
 }
 
