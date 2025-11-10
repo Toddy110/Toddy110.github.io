@@ -433,13 +433,13 @@
 <h2 id="2-导言"><a href="#2-导言" class="headerlink" title="2. 导言"></a>2. 导言</h2><h3 id="2-1-问题背景（集合预测与后处理）"><a href="#2-1-问题背景（集合预测与后处理）" class="headerlink" title="2.1 问题背景（集合预测与后处理）"></a>2.1 问题背景（集合预测与后处理）</h3><p>端到端意义：DETR 出现之前，目标检测领域很少有端到端的方法，但部分方法至少最后需要一个后处理的操作，NMS (non-maximum suppression)，非极大值抑制。大部分方法都会生成很多预测框，就需要 NMS 去除。如果有 NMS，模型调参就会比较复杂，部署困难。</p>
 <p>DETR 既不需要 proposal，也不需要 anchor，直接利用 Transformer，把目标检测看成集合预测，不会输出那么多冗余的框。</p>
 <p>集合预测问题。大多数好用的目标检测器都用间接的方式处理集合预测问题（proposal、anchor …），性能受限于后处理操作。DETR 提出直接的端到端方案来解决集合预测问题。</p>
-<h3 id="2-2-训练流程（1→4）"><a href="#2-2-训练流程（1→4）" class="headerlink" title="2.2 训练流程（1→4）"></a>2.2 训练流程（1→4）</h3><ol>
+<h3 id="2-2-训练流程"><a href="#2-2-训练流程" class="headerlink" title="2.2 训练流程"></a>2.2 训练流程</h3><ol>
 <li>特征提取（CNN/Backbone）：输入图像 → 提取卷积特征（压缩空间，保留语义，多尺度可选），并拉直为序列；</li>
 <li>全局编码（Transformer Encoder）：多层自注意力融合空间上下文，形成全局记忆表征；</li>
 <li>查询解码（Transformer Decoder + Object Queries）：固定数量可学习查询（实例槽位）与全局特征交互，生成候选实例嵌入；</li>
 <li>集合匹配与损失（Hungarian）：一一匹配，计算分类 + L1 + GIoU 组合损失并反向传播。</li>
 </ol>
-<h3 id="2-3-推理流程（1→4）"><a href="#2-3-推理流程（1→4）" class="headerlink" title="2.3 推理流程（1→4）"></a>2.3 推理流程（1→4）</h3><ol>
+<h3 id="2-3-推理流程"><a href="#2-3-推理流程" class="headerlink" title="2.3 推理流程"></a>2.3 推理流程</h3><ol>
 <li>特征提取（同训练）；</li>
 <li>全局编码（同训练）；</li>
 <li>查询解码（同训练，固定查询数保证输出上界）；</li>
