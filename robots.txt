@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://toddy110.github.io/sitemap.xml

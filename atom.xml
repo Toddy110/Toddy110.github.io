@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Modesty.</title>
+  
+  <subtitle>Stay hungry, stay foolish</subtitle>
+  <link href="https://toddy110.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://toddy110.github.io/"/>
+  <updated>2025-11-11T14:12:53.672Z</updated>
+  <id>https://toddy110.github.io/</id>
+  
+  <author>
+    <name>ToddyN</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ViT(Vision Transformer)笔记</title>
+    <link href="https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/"/>
+    <id>https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-11-11T10:26:53.000Z</published>
+    <updated>2025-11-11T14:12:53.672Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;论文: &lt;a href=&quot;https://arxiv.org/abs/2010.11929&quot;&gt;An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=</summary>
+      
+    
+    
+    
+    <category term="计算机视觉" scheme="https://toddy110.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="图像分类" scheme="https://toddy110.github.io/tags/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/"/>
+    
+    <category term="ViT" scheme="https://toddy110.github.io/tags/ViT/"/>
+    
+    <category term="Transformer" scheme="https://toddy110.github.io/tags/Transformer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DETR(Detection Transformer)笔记</title>
+    <link href="https://toddy110.github.io/2025/11/10/DETR-Detection-Transformer-%E7%AC%94%E8%AE%B0/"/>
+    <id>https://toddy110.github.io/2025/11/10/DETR-Detection-Transformer-%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-11-10T04:00:00.000Z</published>
+    <updated>2025-11-11T11:54:57.905Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;DETR-Detection-Transformer&quot;&gt;&lt;a href=&quot;#DETR-Detection-Transformer&quot; class=&quot;headerlink&quot; title=&quot;DETR (Detection Transformer)&quot;&gt;&lt;/a&gt;DETR (</summary>
+      
+    
+    
+    
+    <category term="计算机视觉" scheme="https://toddy110.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="目标检测" scheme="https://toddy110.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+    <category term="DETR" scheme="https://toddy110.github.io/tags/DETR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MNIST 多层感知机(MLP)分类器代码详解</title>
+    <link href="https://toddy110.github.io/2025/10/13/MNIST-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%EF%BC%88MLP%EF%BC%89%E5%88%86%E7%B1%BB%E5%99%A8%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://toddy110.github.io/2025/10/13/MNIST-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%EF%BC%88MLP%EF%BC%89%E5%88%86%E7%B1%BB%E5%99%A8%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3/</id>
+    <published>2025-10-13T07:17:23.000Z</published>
+    <updated>2025-11-11T10:46:45.610Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本项目实现了一个基于 PyTorch 的多层感知机(MLP)模型,用于对 MNIST 手写数字图片进行分类.本文将对 &lt;code&gt;mnist_mlp_classifier.py&lt;/code&gt; 代码进行逐行详细解析,帮助初学者理解每一步的设计思路,参数设置原因,以及涉及到的 </summary>
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://toddy110.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://toddy110.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RNN基础</title>
+    <link href="https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/"/>
+    <id>https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/</id>
+    <published>2025-10-13T07:12:09.000Z</published>
+    <updated>2025-11-11T10:46:45.640Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-RNN基础概念&quot;&gt;&lt;a href=&quot;#1-RNN基础概念&quot; class=&quot;headerlink&quot; title=&quot;1. RNN基础概念&quot;&gt;&lt;/a&gt;1. RNN基础概念&lt;/h2&gt;&lt;h3 id=&quot;1-1-什么是循环神经网络&quot;&gt;&lt;a href=&quot;#1-1-什么是循环神</summary>
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://toddy110.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://toddy110.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构-绪论</title>
+    <link href="https://toddy110.github.io/2025/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/"/>
+    <id>https://toddy110.github.io/2025/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/</id>
+    <published>2025-10-11T08:48:12.000Z</published>
+    <updated>2025-11-11T11:54:33.026Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-基本概念和术语&quot;&gt;&lt;a href=&quot;#1-基本概念和术语&quot; class=&quot;headerlink&quot; title=&quot;1. 基本概念和术语&quot;&gt;&lt;/a&gt;1. 基本概念和术语&lt;/h2&gt;&lt;h3 id=&quot;数据-Data&quot;&gt;&lt;a href=&quot;#数据-Data&quot; class=&quot;headerlink&quot; title=&quot;数据 (Data)&quot;&gt;&lt;/a&gt;数据 (Data)&lt;/h3&gt;&lt;p&gt;定义 | 数据 (Data): 数据是&lt;strong&gt;信息的载体&lt;/strong&gt;, 是描述客观事物属性的数, 字符及所有&lt;strong&gt;能输入到计算机中并被计算机程序识别和处理&lt;/strong&gt;的符号的集合.&lt;/p&gt;
+&lt;p&gt;对于计算机来说, 就是&lt;strong&gt;二进制的 0 和 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数值型数据&lt;/strong&gt;: 整数, 定点数, 浮点数&lt;br&gt;&lt;strong&gt;非数值型数据&lt;/strong&gt;: 文字数据&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数据结构" scheme="https://toddy110.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="数据结构" scheme="https://toddy110.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CNN基础</title>
+    <link href="https://toddy110.github.io/2025/10/01/CNN%E5%9F%BA%E7%A1%80/"/>
+    <id>https://toddy110.github.io/2025/10/01/CNN%E5%9F%BA%E7%A1%80/</id>
+    <published>2025-10-01T04:50:12.000Z</published>
+    <updated>2025-11-11T11:54:57.774Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;CNN-Convolutional-Neural-Network-卷积神经网络-基础&quot;&gt;&lt;a href=&quot;#CNN-Convolutional-Neural-Network-卷积神经网络-基础&quot; class=&quot;headerlink&quot; title=&quot;CNN (Con</summary>
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://toddy110.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://toddy110.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SMPL基础</title>
+    <link href="https://toddy110.github.io/2025/09/19/SMPL%E5%9F%BA%E7%A1%80/"/>
+    <id>https://toddy110.github.io/2025/09/19/SMPL%E5%9F%BA%E7%A1%80/</id>
+    <published>2025-09-19T09:37:20.000Z</published>
+    <updated>2025-11-11T11:54:57.594Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;&lt;em&gt;SMPL&lt;/em&gt;,全称 Skinned Multi-Person Linear Model,是一套优雅而实用的三维人体参数化模型.</summary>
+      
+    
+    
+    
+    <category term="计算机视觉" scheme="https://toddy110.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="SMPL" scheme="https://toddy110.github.io/tags/SMPL/"/>
+    
+    <category term="3D视觉" scheme="https://toddy110.github.io/tags/3D%E8%A7%86%E8%A7%89/"/>
+    
+  </entry>
+  
+</feed>
