@@ -6,7 +6,7 @@
   <link href="https://toddy110.github.io/atom.xml" rel="self"/>
   
   <link href="https://toddy110.github.io/"/>
-  <updated>2025-11-11T14:12:53.672Z</updated>
+  <updated>2025-11-11T14:16:43.615Z</updated>
   <id>https://toddy110.github.io/</id>
   
   <author>
@@ -21,13 +21,12 @@
     <link href="https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/"/>
     <id>https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/</id>
     <published>2025-11-11T10:26:53.000Z</published>
-    <updated>2025-11-11T14:12:53.672Z</updated>
+    <updated>2025-11-11T14:16:43.615Z</updated>
     
     
       
       
-    <summary type="html">&lt;p&gt;论文: &lt;a href=&quot;https://arxiv.org/abs/2010.11929&quot;&gt;An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=</summary>
+    <summary type="html">&lt;h2 id=&quot;1-摘要&quot;&gt;&lt;a href=&quot;#1-摘要&quot; class=&quot;headerlink&quot; title=&quot;1. 摘要&quot;&gt;&lt;/a&gt;1. 摘要&lt;/h2&gt;&lt;p&gt;Transformer 已经是 NLP(自然语言处理)领域的”标配”(如 BERT, GPT 系列), 但在 CV 中长</summary>
       
     
     

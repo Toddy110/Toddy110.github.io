@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="ViT(Vision Transformer)笔记, Modesty.">
-    <meta name="description" content="论文: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
-1. 摘要Transformer 已经是 NLP(自然语言处理)领域的”标配”(如">
+    <meta name="description" content="1. 摘要Transformer 已经是 NLP(自然语言处理)领域的”标配”(如 BERT, GPT 系列), 但在 CV 中长期以”局部改造”的方式出现: 要么与 CNN 组合, 要么在 CNN 中以注意力替换部分卷积, 整体框架仍以卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -336,7 +335,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/themes/hexo-theme-matery/source/medias/featureimages/ViT.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/ViT.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -432,8 +431,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>论文: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2010.11929">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</a></p>
-<h2 id="1-摘要"><a href="#1-摘要" class="headerlink" title="1. 摘要"></a>1. 摘要</h2><p>Transformer 已经是 NLP(自然语言处理)领域的”标配”(如 BERT, GPT 系列), 但在 CV 中长期以”局部改造”的方式出现: 要么与 CNN 组合, 要么在 CNN 中以注意力替换部分卷积, 整体框架仍以卷积为主。ViT 证明: 对卷积的依赖并非必需。只要把图像切成若干 patch 并喂给一个纯 Transformer Encoder, 图像分类同样可以取得很强的表现.</p>
+                <h2 id="1-摘要"><a href="#1-摘要" class="headerlink" title="1. 摘要"></a>1. 摘要</h2><p>Transformer 已经是 NLP(自然语言处理)领域的”标配”(如 BERT, GPT 系列), 但在 CV 中长期以”局部改造”的方式出现: 要么与 CNN 组合, 要么在 CNN 中以注意力替换部分卷积, 整体框架仍以卷积为主。ViT 证明: 对卷积的依赖并非必需。只要把图像切成若干 patch 并喂给一个纯 Transformer Encoder, 图像分类同样可以取得很强的表现.</p>
 <h2 id="2-导言"><a href="#2-导言" class="headerlink" title="2. 导言"></a>2. 导言</h2><p>在 NLP 中, 随着数据和模型规模增大, Transformer 的性能往往”稳步上行、未见饱和”。把它直接搬到视觉, 首先会遇到一个核心难点: 如何把 2D 图像转换为 1D 序列?</p>
 <ul>
 <li>直觉做法是把每个像素当作序列元素, 直接展平整张图再送入 Transformer。但复杂度会爆炸: 分类常用输入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>224</mn><mo>×</mo><mn>224</mn></mrow><annotation encoding="application/x-tex">224\times224</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">224</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">224</span></span></span></span> 展平后序列长达 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50176</mn></mrow><annotation encoding="application/x-tex">50176</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">50176</span></span></span></span>, 约为 BERT 的 100 倍; 检测/分割常用的更大分辨率(如 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>600</mn><mo>×</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">600\times600</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">600</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">600</span></span></span></span>)会更夸张.</li>
@@ -630,7 +628,7 @@
                 <a href="/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
-                        <img src="/themes/hexo-theme-matery/source/medias/featureimages/ViT.png" class="responsive-img" alt="ViT(Vision Transformer)笔记">
+                        <img src="/medias/featureimages/ViT.png" class="responsive-img" alt="ViT(Vision Transformer)笔记">
                         
                         <span class="card-title">ViT(Vision Transformer)笔记</span>
                     </div>
