@@ -403,7 +403,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    3.9k
                 </div>
                 
 
@@ -440,6 +440,11 @@
 <li>查询解码(Transformer Decoder + Object Queries):固定数量可学习查询(实例槽位)与全局特征交互,生成候选实例嵌入;</li>
 <li>集合匹配与损失(Hungarian):一一匹配,计算分类 + L1 + GIoU 组合损失并反向传播.</li>
 </ol>
+<h3 id="要点回顾（2-1-节）"><a href="#要点回顾（2-1-节）" class="headerlink" title="要点回顾（2.1 节）"></a>要点回顾（2.1 节）</h3><ul>
+<li>DETR 把检测视为集合预测，输出固定数量的预测并通过一一匹配去除冗余；</li>
+<li>匈牙利匹配把分类与框回归的损失作为 cost 填入损失矩阵，求最优一一匹配；</li>
+<li>端到端训练的好处是减少后处理（例如 NMS）相关超参与复杂度。</li>
+</ul>
 <h3 id="2-3-推理流程"><a href="#2-3-推理流程" class="headerlink" title="2.3 推理流程"></a>2.3 推理流程</h3><ol>
 <li>特征提取(同训练);</li>
 <li>全局编码(同训练);</li>
@@ -986,7 +991,7 @@ logits<span class="token punctuation">,</span> bboxes <span class="token operato
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.6k</span>
+                        class="white-color">24.9k</span>
             
             
             
