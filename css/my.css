@@ -388,3 +388,451 @@ body {
 footer {
     background-color: #FAFAFA !important;
 }
+
+/* ========================================
+   清新蓝色主题 - 追加覆盖，统一主色为蓝
+   ======================================== */
+
+:root {
+	--brand-primary: #3b82f6; /* 主色：清新蓝 */
+	--brand-strong: #2563eb;  /* 深一点的蓝，用于强调 */
+	--brand-soft: rgba(59, 130, 246, 0.12);
+	--brand-soft-strong: rgba(59, 130, 246, 0.18);
+	--brand-text: #1f2937;
+	--brand-gradient: linear-gradient(135deg, #4facfe 0%, #3b7dff 100%);
+}
+
+body.DarkMode {
+	--brand-primary: #8fc5ff;
+	--brand-strong: #6aa9ff;
+	--brand-soft: rgba(143, 197, 255, 0.16);
+	--brand-soft-strong: rgba(143, 197, 255, 0.24);
+	--brand-text: #e5edff;
+	--brand-gradient: linear-gradient(135deg, #6aa9ff 0%, #8fd1ff 100%);
+}
+
+/* 基础底色与文本 */
+body {
+	background-color: #f8fbff !important;
+	color: var(--brand-text);
+}
+
+footer {
+	background-color: #f3f7fd !important;
+}
+
+/* 全局主色块 */
+.bg-gradient-primary,
+.card-gradient-primary,
+.bg-color-primary,
+.bg-color {
+	background: var(--brand-gradient) !important;
+}
+
+.text-color,
+a.text-color {
+	color: var(--brand-strong) !important;
+}
+
+/* 进度 / 滚动指示 */
+.progress-bar,
+.read-progress {
+	background: var(--brand-gradient) !important;
+}
+
+/* 引用与卡片 */
+blockquote {
+	border-left: 4px solid var(--brand-primary) !important;
+	background-color: var(--brand-soft) !important;
+	color: #475569;
+}
+
+.card {
+	border-top: 3px solid var(--brand-soft-strong) !important;
+}
+
+.card:hover {
+	box-shadow: 0 6px 18px rgba(59, 130, 246, 0.12) !important;
+}
+
+/* 按钮与分页 */
+.btn-primary,
+.btn-default,
+button[type="submit"] {
+	background: var(--brand-gradient) !important;
+	color: #fff !important;
+	box-shadow: 0 6px 16px rgba(59, 130, 246, 0.2) !important;
+	border: none;
+}
+
+.btn-primary:hover,
+.btn-default:hover,
+button[type="submit"]:hover {
+	background: linear-gradient(135deg, #3b7dff 0%, #4facfe 100%) !important;
+}
+
+.pagination li.active a {
+	background-color: var(--brand-strong) !important;
+	color: #fff !important;
+}
+
+.pagination li a:hover {
+	background-color: var(--brand-soft) !important;
+	color: var(--brand-strong) !important;
+}
+
+/* 文字与链接 */
+article a:hover,
+#articleContent a,
+#articleContent a:hover,
+.markdown-body a,
+.markdown-body a:hover,
+.gitment-markdown a,
+.gitment-markdown a:hover,
+#toc-content .toc-link:hover,
+#toc-content .is-active-link,
+#gitalk-container .gt-no-init a,
+#gitalk-container .gt-container a,
+#gitalk-container .gt-container .gt-link,
+#gitalk-container .gt-container .gt-comment-username {
+	color: var(--brand-strong) !important;
+}
+
+/* 标签 / 分类 / 计数 */
+#artDetail .tag_share .article-tag .chip {
+	color: var(--brand-strong);
+	background: #fff;
+	border: 1px solid var(--brand-strong);
+}
+
+#artDetail .tag_share .article-tag .chip:hover {
+	color: #fff;
+	background: var(--brand-gradient);
+}
+
+#artDetail .post-cate,
+#artDetail .post-cate a,
+.post-statis .statis .count a {
+	color: var(--brand-strong);
+}
+
+/* TOC */
+#toc-content .toc-link:hover {
+	text-decoration: underline;
+	font-weight: 700;
+}
+
+#floating-toc-btn .btn-floating {
+	background: var(--brand-gradient);
+}
+
+/* 文章块与时间线 */
+article a:hover {
+	text-decoration: underline;
+}
+
+.chip-container .chip:hover {
+	color: #fff;
+	background: var(--brand-gradient) !important;
+}
+
+#cd-timeline::before {
+	background: var(--brand-strong);
+}
+
+/* About 页社交链接 */
+#aboutme .social-link a {
+	border: 1px solid var(--brand-strong);
+	background: radial-gradient(var(--brand-strong), var(--brand-primary));
+}
+
+/* 滚动/返回顶部 */
+#scrollUp {
+	background: #e5f0ff !important;
+	color: var(--brand-strong);
+}
+
+#scrollUp:hover {
+	background: #d8e7ff !important;
+}
+
+/* 评论组件（Gitalk / Gitment） */
+#gitalk-container .gt-container .gt-btn,
+#gitalk-container .gt-btn-login,
+#gitalk-container .gt-container .gt-header-controls .gt-btn,
+.gitment-editor-footer .gitment-editor-submit,
+.gitment-comments-init-btn,
+.gitment-comments-pagination .gitment-comments-page-item {
+	border: 1px solid var(--brand-strong) !important;
+	background: var(--brand-strong) !important;
+	box-shadow: 0 4px 12px rgba(59, 130, 246, 0.18) !important;
+	color: #fff !important;
+}
+
+#gitalk-container .gt-container .gt-btn-preview {
+	color: var(--brand-strong) !important;
+	border: 1px solid var(--brand-strong) !important;
+	background: #fff !important;
+	box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12) !important;
+}
+
+#gitalk-container .gt-container .gt-svg svg {
+	fill: var(--brand-strong);
+}
+
+.gitment-editor-container .gitment-editor-avatar .gitment-github-icon,
+.gitment-editor-main .gitment-editor-tabs {
+	background: var(--brand-gradient);
+}
+
+.gitment-markdown a,
+.gitment-footer-container a {
+	color: var(--brand-strong) !important;
+}
+
+/* 其他小元素 */
+.badge,
+.tag,
+.post-category,
+.post-tag {
+	background-color: var(--brand-soft) !important;
+	color: var(--brand-strong) !important;
+}
+
+pre {
+	background-color: #f4f8ff !important;
+	border-left: 4px solid var(--brand-soft-strong) !important;
+}
+
+/* 首页/文章顶部封面遮罩，去掉紫色动画换成柔和蓝 */
+.bg-cover:after,
+.bg-cover:before {
+	animation: none !important;
+	background: linear-gradient(135deg, rgba(59, 130, 246, 0.62), rgba(37, 99, 235, 0.55)) !important;
+}
+
+/* ========================================
+   统一去紫：覆盖残留的紫色样式为蓝色
+   ======================================== */
+
+/* TOC */
+.toc-widget .toc-title {
+	color: var(--brand-strong) !important;
+}
+
+#toc-content .toc-link {
+	color: var(--brand-text) !important;
+}
+
+#toc-content .toc-link:hover,
+#toc-content .is-active-link {
+	color: var(--brand-strong) !important;
+}
+
+/* Gitalk/Gitment 残留紫色 */
+.gitment-editor-container .gitment-editor-avatar .gitment-github-icon {
+	background-color: var(--brand-strong) !important;
+}
+
+.gitment-editor-main .gitment-editor-tabs {
+	background: var(--brand-gradient) !important;
+}
+
+.gitment-editor-main .gitment-editor-tabs .gitment-editor-tab {
+	color: #fff !important;
+}
+
+.gitment-editor-main .gitment-editor-tabs .gitment-selected {
+	background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.gitment-editor-footer .gitment-editor-submit,
+.gitment-comments-init-btn,
+.gitment-comments-pagination .gitment-comments-page-item {
+	border: 1px solid var(--brand-strong) !important;
+	background: var(--brand-strong) !important;
+	box-shadow: 0 4px 12px rgba(59, 130, 246, 0.18) !important;
+	color: #fff !important;
+}
+
+.gitment-footer-container a,
+.gitment-markdown a {
+	color: var(--brand-strong) !important;
+}
+
+.gitment-markdown blockquote {
+	border-left: 4px solid var(--brand-primary) !important;
+	background: var(--brand-soft) !important;
+}
+
+/* Post 页面标签/分类色 */
+.post-category,
+.post-tag,
+.badge,
+.tag {
+	background: var(--brand-soft) !important;
+	color: var(--brand-strong) !important;
+}
+
+.post-category:hover,
+.post-tag:hover {
+	background: var(--brand-gradient) !important;
+	color: #fff !important;
+}
+
+/* ========================================
+   DarkMode 美化：更深背景 + 蓝色点缀
+   ======================================== */
+
+body.DarkMode {
+	background: #0b1220 !important;
+	color: var(--brand-text);
+}
+
+body.DarkMode footer {
+	background: #0d1424 !important;
+}
+
+/* 全局主色文字 */
+body.DarkMode a,
+body.DarkMode a:hover,
+body.DarkMode .text-color,
+body.DarkMode a.text-color {
+	color: var(--brand-primary) !important;
+}
+
+/* 卡片、块、TOC */
+body.DarkMode .card,
+body.DarkMode article .card,
+body.DarkMode .toc-widget,
+body.DarkMode #toc-content,
+body.DarkMode .chip,
+body.DarkMode .chip-container .chip,
+body.DarkMode .gitment-editor-main,
+body.DarkMode .gitment-comment-main {
+	background: #111a2e !important;
+	color: #e6edff !important;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.DarkMode .card:hover {
+	box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* 按钮 */
+body.DarkMode .btn-primary,
+body.DarkMode .btn-default,
+body.DarkMode button[type="submit"] {
+	background: var(--brand-gradient) !important;
+	color: #fff !important;
+	border: none;
+	box-shadow: 0 8px 20px rgba(106, 169, 255, 0.25) !important;
+}
+
+body.DarkMode .btn-primary:hover,
+body.DarkMode .btn-default:hover,
+body.DarkMode button[type="submit"]:hover {
+	background: linear-gradient(135deg, #5ca9ff 0%, #7fc7ff 100%) !important;
+}
+
+/* Blockquote */
+body.DarkMode blockquote {
+	border-left: 4px solid var(--brand-primary) !important;
+	background: rgba(59, 130, 246, 0.12) !important;
+	color: #d8e3ff !important;
+}
+
+/* 标签/分类/计数 */
+body.DarkMode .badge,
+body.DarkMode .tag,
+body.DarkMode .post-category,
+body.DarkMode .post-tag {
+	background: rgba(59, 130, 246, 0.15) !important;
+	color: #d8e9ff !important;
+	border: 1px solid rgba(143, 197, 255, 0.35) !important;
+}
+
+body.DarkMode .post-category:hover,
+body.DarkMode .post-tag:hover {
+	background: var(--brand-gradient) !important;
+	color: #fff !important;
+}
+
+/* TOC 标题与链接 */
+body.DarkMode .toc-widget .toc-title {
+	color: #dfe7ff !important;
+}
+
+body.DarkMode #toc-content .toc-link {
+	color: #c6d3f7 !important;
+}
+
+body.DarkMode #toc-content .toc-link:hover,
+body.DarkMode #toc-content .is-active-link {
+	color: #9bc5ff !important;
+}
+
+/* 文章正文 */
+body.DarkMode #articleContent {
+	color: #dfe6ff;
+}
+
+body.DarkMode #articleContent a,
+body.DarkMode .markdown-body a {
+	color: #9bc5ff !important;
+}
+
+body.DarkMode #articleContent a:hover,
+body.DarkMode .markdown-body a:hover {
+	color: #c3ddff !important;
+	text-decoration: underline;
+}
+
+/* 社交按钮/封面遮罩在暗色下稍微加深 */
+body.DarkMode .bg-cover:before,
+body.DarkMode .bg-cover:after {
+	background: linear-gradient(135deg, rgba(11, 18, 32, 0.68), rgba(37, 99, 235, 0.45)) !important;
+}
+
+/* 评论组件暗色 */
+body.DarkMode #gitalk-container .gt-container .gt-btn,
+body.DarkMode #gitalk-container .gt-btn-login,
+body.DarkMode #gitalk-container .gt-container .gt-header-controls .gt-btn,
+body.DarkMode .gitment-editor-footer .gitment-editor-submit,
+body.DarkMode .gitment-comments-init-btn,
+body.DarkMode .gitment-comments-pagination .gitment-comments-page-item {
+	background: var(--brand-strong) !important;
+	border: 1px solid rgba(143, 197, 255, 0.4) !important;
+	box-shadow: 0 6px 18px rgba(106, 169, 255, 0.25) !important;
+}
+
+body.DarkMode #gitalk-container .gt-container .gt-btn-preview {
+	color: #9bc5ff !important;
+	border: 1px solid rgba(143, 197, 255, 0.35) !important;
+	background: #111a2e !important;
+}
+
+body.DarkMode #gitalk-container .gt-container .gt-svg svg {
+	fill: #9bc5ff;
+}
+
+body.DarkMode .gitment-markdown p,
+body.DarkMode .gitment-markdown,
+body.DarkMode .gitment-footer-container {
+	color: #dfe6ff !important;
+}
+
+body.DarkMode .gitment-footer-container a,
+body.DarkMode .gitment-markdown a {
+	color: #9bc5ff !important;
+}
+
+/* 滚动条 */
+body.DarkMode ::-webkit-scrollbar-thumb {
+	background: linear-gradient(to bottom, #1f2b44, #263352) !important;
+}
+
+/* 图标色 */
+body.DarkMode .cover-social-link a {
+	color: #dfe7ff !important;
+}
