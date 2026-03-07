@@ -19,6 +19,9 @@
 
     <title>RNN基础 | Modesty.</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
     
 
 
@@ -398,7 +401,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.4k
+                    4.5k
                 </div>
                 
 
@@ -438,7 +441,7 @@
 <li>计算当前时间步的输出和新的隐藏状态</li>
 <li>将新的隐藏状态传递给下一个时间步</li>
 </ol>
-<h2 id="RNNCell展开示意图"><a href="#RNNCell展开示意图" class="headerlink" title="RNNCell展开示意图"></a>RNNCell展开示意图</h2><p><img src="/../medias/images/RNNCell.png"></p>
+<h2 id="RNNCell展开示意图"><a href="#RNNCell展开示意图" class="headerlink" title="RNNCell展开示意图"></a>RNNCell展开示意图</h2><p><img src="/medias/images/posts/rnn/RNNCell.png"></p>
 <p><em>图:RNN在时间维度上的展开示意图.展示了同一个RNN Cell如何在不同时间步被重复使用,通过隐藏状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">h_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 在时间步之间传递信息.</em></p>
 <h3 id="图片说明"><a href="#图片说明" class="headerlink" title="图片说明:"></a>图片说明:</h3><ol>
 <li><strong>绿色矩形块</strong>:表示RNN Cell,在四个时间步中被重复使用(权重共享)</li>
@@ -465,8 +468,14 @@
 <p>这就是RNN的”记忆”能力!</p>
 <hr>
 <h2 id="2-RNN的数学原理"><a href="#2-RNN的数学原理" class="headerlink" title="2. RNN的数学原理"></a>2. RNN的数学原理</h2><h3 id="2-1-前向传播公式"><a href="#2-1-前向传播公式" class="headerlink" title="2.1 前向传播公式"></a>2.1 前向传播公式</h3><p>RNN的前向传播可以用以下公式表示:</p>
-<p><strong>MATHBLOCK_0</strong></p>
-<p><strong>MATHBLOCK_1</strong></p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub><mo>=</mo><mi>tanh</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><msub><mi>W</mi><mrow><mi>x</mi><mi>h</mi></mrow></msub><msub><mi>x</mi><mi>t</mi></msub><mo>+</mo><msub><mi>W</mi><mrow><mi>h</mi><mi>h</mi></mrow></msub><msub><mi>h</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mi>h</mi></msub><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+h_t = \tanh\left(W_{xh}x_t + W_{hh}h_{t-1} + b_h\right)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">tanh</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">h</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">hh</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span></span>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>y</mi><mi>t</mi></msub><mo>=</mo><msub><mi>W</mi><mrow><mi>h</mi><mi>y</mi></mrow></msub><msub><mi>h</mi><mi>t</mi></msub><mo>+</mo><msub><mi>b</mi><mi>y</mi></msub></mrow><annotation encoding="application/x-tex">
+y_t = W_{hy}h_t + b_y
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span>
+
 <p>其中:</p>
 <ul>
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">x_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>:当前时间步的输入</li>
@@ -482,7 +491,7 @@
 <li><strong>状态传递</strong>:将信息从一个时间步传递到下一个时间步</li>
 <li><strong>特征提取</strong>:自动学习序列中的重要特征和模式</li>
 </ul>
-<h2 id="numLayers示意图"><a href="#numLayers示意图" class="headerlink" title="numLayers示意图"></a>numLayers示意图</h2><p><img src="/../medias/images/numLayers.png"></p>
+<h2 id="numLayers示意图"><a href="#numLayers示意图" class="headerlink" title="numLayers示意图"></a>numLayers示意图</h2><p><img src="/medias/images/posts/rnn/numLayers.png"></p>
 <p><em>图:多层RNN的结构示意图.展示了不同层数的RNN如何堆叠,每层都有自己的隐藏状态.</em></p>
 <h3 id="图片说明-1"><a href="#图片说明-1" class="headerlink" title="图片说明:"></a>图片说明:</h3><ul>
 <li><strong>上标</strong>:不是指数,而是表示不同的层数</li>
@@ -492,12 +501,12 @@
 <p>要注意的是,在图中同样颜色的RNNCell是同一个,体现了RNN的参数共享特性.</p>
 <hr>
 <h2 id="3-字符级RNN实现"><a href="#3-字符级RNN实现" class="headerlink" title="3. 字符级RNN实现"></a>3. 字符级RNN实现</h2><h3 id="3-1-数据预处理"><a href="#3-1-数据预处理" class="headerlink" title="3.1 数据预处理"></a>3.1 数据预处理</h3><p>在我们的实现中,我们使用了一个简单的字符级RNN来学习”hello”到”ohlol”的映射:</p>
-<p><img src="/medias/images/example1.png" alt="example1"></p>
+<p><img src="/medias/images/posts/rnn/example1.png" alt="example1"></p>
 <p><em>图:字符级RNN的任务示例.输入序列”hello”,输出序列”ohlol”.</em></p>
 <p>如图,我们输入的序列即是’h’,’e’,’l’,’l’,’o’,将来隐层的输出就得是’o’,’h’,’l’,’o’,’l’.</p>
 <p>我们遇到的问题就是,此时我们输入的是字符,而并不是一个向量,就会导致现在我们无法计算.</p>
 <p>所以,我们第一步就需要把这些字符进行向量化,如下图所示:</p>
-<p><img src="/medias/images/vectorization.png" alt="向量化"></p>
+<p><img src="/medias/images/posts/rnn/vectorization.png" alt="向量化"></p>
 <p><em>图:字符向量化过程.从字符到索引,再到独热编码的转换过程.</em></p>
 <h3 id="字符向量化过程"><a href="#字符向量化过程" class="headerlink" title="字符向量化过程"></a>字符向量化过程</h3><p>在自然语言处理中,我们需要将字符转换为神经网络能够处理的数值形式.这个过程分为几个步骤:</p>
 <p><strong>第一步:构建词典</strong><br>首先根据所有可能出现的字符构造一个词典,给每个字符分配一个唯一的索引.在我们的例子中:</p>
@@ -798,12 +807,12 @@ optimizer <span class="token operator">=</span> torch<span class="token punctuat
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'Ov23lisOaoXvkAiOH8Jf',
-        clientSecret: '611399a4e3f08619bd0ab3356ea6db1e3277196f',
+        clientID: 'YOUR_GITALK_CLIENT_ID',
+        clientSecret: 'YOUR_GITALK_CLIENT_SECRET',
         repo: 'blog-comments',
         owner: 'Toddy110',
-        admin: "Toddy110",
-        id: '2025-10-13T15-12-09',
+        admin: JSON.parse('"Toddy110"'),
+        id: "2025-10-13T15-12-09",
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1055,7 +1064,7 @@ optimizer <span class="token operator">=</span> torch<span class="token punctuat
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2025</span>
+                <span id="year">2025-2026</span>
             
             <a href="/about" target="_blank">ToddyN</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

@@ -1,0 +1,169 @@
+/* ========================================
+   深色模式修正（灰黑主调）
+   ======================================== */
+
+body.DarkMode {
+	--wk-dark-bg: #111214;
+	--wk-dark-surface: #1a1c1f;
+	--wk-dark-surface-2: #23262a;
+	--wk-dark-text: #e1e4e8;
+	--wk-dark-subtle: #aab0b7;
+	--wk-dark-line: #31353b;
+	--wk-dark-accent: #b7c0ca;
+	--wk-dark-accent-strong: #9ea7b2;
+	background: var(--wk-dark-bg) !important;
+	color: var(--wk-dark-text) !important;
+}
+
+body.DarkMode .card,
+body.DarkMode article .card,
+body.DarkMode #artDetail .card,
+body.DarkMode .toc-widget,
+body.DarkMode #toc-content,
+body.DarkMode .chip,
+body.DarkMode .chip-container .chip,
+body.DarkMode .gitment-editor-main,
+body.DarkMode .gitment-comment-main {
+	background: var(--wk-dark-surface) !important;
+	color: var(--wk-dark-text) !important;
+	border: 1px solid var(--wk-dark-line) !important;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32) !important;
+}
+
+body.DarkMode .bg-color,
+body.DarkMode .bg-gradient-primary,
+body.DarkMode .card-gradient-primary,
+body.DarkMode .progress-bar,
+body.DarkMode .read-progress {
+	background-image: linear-gradient(120deg, #444b54 0%, #565f6a 55%, #69727e 100%) !important;
+}
+
+body.DarkMode a,
+body.DarkMode a:hover,
+body.DarkMode .text-color,
+body.DarkMode a.text-color,
+body.DarkMode #articleContent a,
+body.DarkMode .markdown-body a,
+body.DarkMode #artDetail .post-cate,
+body.DarkMode #artDetail .post-cate a {
+	color: var(--wk-dark-accent) !important;
+}
+
+body.DarkMode p,
+body.DarkMode li,
+body.DarkMode #articleContent,
+body.DarkMode #articleContent p,
+body.DarkMode .article-content .summary {
+	color: var(--wk-dark-text) !important;
+}
+
+body.DarkMode .btn-primary,
+body.DarkMode .btn-default,
+body.DarkMode button[type="submit"],
+body.DarkMode .cover-btns a {
+	background: linear-gradient(120deg, #525a64 0%, #66707c 100%) !important;
+	border: 1px solid #6d7681 !important;
+	color: #fff !important;
+	box-shadow: 0 8px 20px rgba(102, 112, 124, 0.24) !important;
+}
+
+body.DarkMode .btn-primary:hover,
+body.DarkMode .btn-default:hover,
+body.DarkMode button[type="submit"]:hover,
+body.DarkMode .cover-btns a:hover {
+	background: linear-gradient(120deg, #5f6873 0%, #75808d 100%) !important;
+}
+
+body.DarkMode .chip,
+body.DarkMode .badge,
+body.DarkMode .post-tag,
+body.DarkMode .post-category,
+body.DarkMode #artDetail .tag_share .article-tag .chip {
+	background: #25292e !important;
+	color: #c4ccd4 !important;
+	border: 1px solid #3c424a !important;
+}
+
+body.DarkMode .chip-container .chip:hover,
+body.DarkMode .post-category:hover,
+body.DarkMode .post-tag:hover,
+body.DarkMode #artDetail .tag_share .article-tag .chip:hover {
+	background: linear-gradient(120deg, #525a64 0%, #66707c 100%) !important;
+	color: #fff !important;
+}
+
+body.DarkMode blockquote,
+body.DarkMode #articleContent blockquote,
+body.DarkMode .gitment-markdown blockquote {
+	border-left: 4px solid #7b8592 !important;
+	background: #202327 !important;
+	color: #cfd5dc !important;
+}
+
+body.DarkMode footer {
+	background: #17191c !important;
+}
+
+body.DarkMode footer a,
+body.DarkMode footer .copy-right {
+	color: #aeb4bc !important;
+}
+
+body.DarkMode .toc-widget .toc-title {
+	color: #e5e9ee !important;
+}
+
+body.DarkMode #toc-content .toc-link {
+	color: #b8c0c8 !important;
+}
+
+body.DarkMode #toc-content .toc-link:hover,
+body.DarkMode #toc-content .is-active-link {
+	color: #e2e7ec !important;
+}
+
+body.DarkMode .bg-cover:before,
+body.DarkMode .bg-cover:after {
+	background: linear-gradient(125deg, rgba(16, 18, 21, 0.72) 0%, rgba(38, 43, 49, 0.58) 55%, rgba(67, 75, 84, 0.48) 100%) !important;
+}
+
+body.DarkMode html::before,
+body.DarkMode html::after,
+body.DarkMode::before,
+body.DarkMode::after {
+	opacity: 0.12;
+}
+
+body.DarkMode ::-webkit-scrollbar-thumb {
+	background: linear-gradient(to bottom, #4a525b, #646e79) !important;
+}
+
+body.DarkMode::before {
+	content: "";
+	position: fixed;
+	pointer-events: none;
+	left: 8%;
+	top: 18%;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	filter: blur(1px);
+	background: radial-gradient(circle at 35% 35%, rgba(196, 202, 210, 0.18), rgba(196, 202, 210, 0.01) 70%);
+	z-index: 0;
+	animation: wkFloat 18s ease-in-out infinite;
+}
+
+body.DarkMode::after {
+	content: "";
+	position: fixed;
+	pointer-events: none;
+	right: 7%;
+	bottom: 15%;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	filter: blur(1px);
+	background: radial-gradient(circle at 45% 45%, rgba(169, 178, 189, 0.16), rgba(169, 178, 189, 0.01) 70%);
+	z-index: 0;
+	animation: wkFloat 20s ease-in-out infinite -6s;
+}

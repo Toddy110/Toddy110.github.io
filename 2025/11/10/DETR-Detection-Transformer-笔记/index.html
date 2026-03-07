@@ -20,6 +20,9 @@
 
     <title>DETR(Detection Transformer)笔记 | Modesty.</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
     
 
 
@@ -468,7 +471,7 @@
 </li>
 </ol>
 <p><strong>最主要的原因</strong>:使用 Transformer(神中神).</p>
-<h2 id="4-DETR-主体部分"><a href="#4-DETR-主体部分" class="headerlink" title="4. DETR 主体部分"></a>4. DETR 主体部分</h2><p><img src="/../medias/images/DETR.png"></p>
+<h2 id="4-DETR-主体部分"><a href="#4-DETR-主体部分" class="headerlink" title="4. DETR 主体部分"></a>4. DETR 主体部分</h2><p><img src="/medias/images/posts/detr/DETR.png"></p>
 <h3 id="4-1-集合预测动机"><a href="#4-1-集合预测动机" class="headerlink" title="4.1 集合预测动机"></a>4.1 集合预测动机</h3><p>DETR 输出一个固定大小的集合(n = 100),通常多于一张图片中的物体个数.固定长度的输出便于并行与张量化,且通过后续一一匹配与注意力抑制冗余,避免传统方法里”多→删”的后处理路径.一张图片的 GT 的 bounding box 可能只有几个,如何匹配并计算 loss?可以用二分图匹配解决.</p>
 <h3 id="4-2-匈牙利-二分图-匹配例子"><a href="#4-2-匈牙利-二分图-匹配例子" class="headerlink" title="4.2 匈牙利(二分图)匹配例子"></a>4.2 匈牙利(二分图)匹配例子</h3><p>可以理解为:如何分配工人完成任务,使得总成本最小.</p>
 <p>假如说现在我有3个工人a,b,c,要去完成3个工作x,y,z</p>
@@ -720,12 +723,12 @@ logits<span class="token punctuation">,</span> bboxes <span class="token operato
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'Ov23lisOaoXvkAiOH8Jf',
-        clientSecret: '611399a4e3f08619bd0ab3356ea6db1e3277196f',
+        clientID: 'YOUR_GITALK_CLIENT_ID',
+        clientSecret: 'YOUR_GITALK_CLIENT_SECRET',
         repo: 'blog-comments',
         owner: 'Toddy110',
-        admin: "Toddy110",
-        id: '2025-11-10T12-00-00',
+        admin: JSON.parse('"Toddy110"'),
+        id: "2025-11-10T12-00-00",
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -982,7 +985,7 @@ logits<span class="token punctuation">,</span> bboxes <span class="token operato
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2025</span>
+                <span id="year">2025-2026</span>
             
             <a href="/about" target="_blank">ToddyN</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

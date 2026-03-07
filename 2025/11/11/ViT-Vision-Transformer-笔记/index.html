@@ -19,6 +19,9 @@
 
     <title>ViT(Vision Transformer)笔记 | Modesty.</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
     
 
 
@@ -446,7 +449,7 @@
 <li>平移等变性(translation equivariance): 可近似理解为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>≈</mo><mi>g</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x)) \approx g(f(x))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">))</span></span></span></span>, 先平移再卷积与先卷积再平移的效果接近.</li>
 </ul>
 <p>正因 CNN 携带这些先验, 它在数据有限时更稳。而 ViT 只要有足够数据进行预训练, 再在下游迁移微调, 就能取得非常好的泛化与可扩展性。某种意义上, 它把 NLP 与 CV 的”范式”连通了: 使用几乎”原味”的 NLP Transformer 架构, 只在 patch 抽取与位置编码处保留少量图像特有的设定, 就能在大规模预训练的加持下, 在多项图像分类基准上达到或超过以往方法.</p>
-<h2 id="3-ViT-模型"><a href="#3-ViT-模型" class="headerlink" title="3. ViT 模型"></a>3. ViT 模型</h2><p><img src="/../medias/images/ViT.png"><br>在模型设计上, 尽量沿用”原始的 Transformer Encoder 堆叠”.<br>好处: 可以直接复用 NLP 领域已被充分验证的模块与训练技巧, 工程与实验成本更低.</p>
+<h2 id="3-ViT-模型"><a href="#3-ViT-模型" class="headerlink" title="3. ViT 模型"></a>3. ViT 模型</h2><p><img src="/medias/images/posts/vit/ViT.png"><br>在模型设计上, 尽量沿用”原始的 Transformer Encoder 堆叠”.<br>好处: 可以直接复用 NLP 领域已被充分验证的模块与训练技巧, 工程与实验成本更低.</p>
 <h3 id="3-1-Patch-切分与线性嵌入"><a href="#3-1-Patch-切分与线性嵌入" class="headerlink" title="3.1 Patch 切分与线性嵌入"></a>3.1 Patch 切分与线性嵌入</h3><p>给定一张输入图, 将其切分为若干 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mo>×</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">16\times16</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span></span></span></span> 的 patch; 把这些 patch 依序展平成 token, 并通过线性投射层得到 patch embedding。由于自注意力天然是”全互联”, 并不自带顺序信息, 因此需要为每个 token 额外加入位置编码(position embedding), 让序列既包含局部图像信息, 也编码其在整幅图中的相对位置.</p>
 <p>为实现分类, ViT 在序列最前加入一个可学习的分类标记 <a href="%E6%96%87%E4%B8%AD%E5%8E%9F%E4%BB%A5%22*%22%E8%A1%A8%E7%A4%BA">CLS</a>。它与其他 token 一同参与多头自注意力交互; 直觉上, [CLS] 会从所有 patch token 聚合全局语义。最终使用 [CLS] 对应的向量, 接一个 MLP head(分类头)进行预测, 训练时采用交叉熵损失.</p>
 <p>提示: 实践中, patch embedding 既可用”线性层 + 展平”实现, 也可等价地用 Conv2d(kernel=stride=patch_size)实现, 后者在工程上更高效.</p>
@@ -589,12 +592,12 @@
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'Ov23lisOaoXvkAiOH8Jf',
-        clientSecret: '611399a4e3f08619bd0ab3356ea6db1e3277196f',
+        clientID: 'YOUR_GITALK_CLIENT_ID',
+        clientSecret: 'YOUR_GITALK_CLIENT_SECRET',
         repo: 'blog-comments',
         owner: 'Toddy110',
-        admin: "Toddy110",
-        id: '2025-11-11T18-26-53',
+        admin: JSON.parse('"Toddy110"'),
+        id: "2025-11-11T18-26-53",
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -857,7 +860,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2025</span>
+                <span id="year">2025-2026</span>
             
             <a href="/about" target="_blank">ToddyN</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

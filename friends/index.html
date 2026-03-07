@@ -19,6 +19,9 @@
 
     <title>friends | Modesty.</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
     
 
 
@@ -660,12 +663,12 @@
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'Ov23lisOaoXvkAiOH8Jf',
-        clientSecret: '611399a4e3f08619bd0ab3356ea6db1e3277196f',
+        clientID: 'YOUR_GITALK_CLIENT_ID',
+        clientSecret: 'YOUR_GITALK_CLIENT_SECRET',
         repo: 'blog-comments',
         owner: 'Toddy110',
-        admin: "Toddy110",
-        id: '2025-10-10T12-00-00',
+        admin: JSON.parse('"Toddy110"'),
+        id: "2025-10-10T12-00-00",
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -707,7 +710,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2025</span>
+                <span id="year">2025-2026</span>
             
             <a href="/about" target="_blank">ToddyN</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
