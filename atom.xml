@@ -6,7 +6,7 @@
   <link href="https://toddy110.github.io/atom.xml" rel="self"/>
   
   <link href="https://toddy110.github.io/"/>
-  <updated>2026-03-10T14:23:01.893Z</updated>
+  <updated>2026-03-10T14:27:56.408Z</updated>
   <id>https://toddy110.github.io/</id>
   
   <author>
@@ -17,16 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数据库基本概念与关系数据模型（Database Fundamentals and the Relational Data Model）</title>
+    <title>数据库基本概念与关系数据模型</title>
     <link href="https://toddy110.github.io/2026/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/"/>
     <id>https://toddy110.github.io/2026/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/</id>
-    <published>2026-03-09T16:00:00.000Z</published>
-    <updated>2026-03-10T14:23:01.893Z</updated>
+    <published>2026-03-10T14:22:22.000Z</published>
+    <updated>2026-03-10T14:27:56.408Z</updated>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;数据库基本概念与关系数据模型（Database-Fundamentals-and-the-Relational-Data-Model）&quot;&gt;&lt;a href=&quot;#数据库基本概念与关系数据模型（Database-Fundamentals-and-the-Relation</summary>
+    <summary type="html">&lt;h1&gt;数据库基本概念与关系数据模型（Database Fundamentals and the Relational Data Model）&lt;/h1&gt;
+&lt;h2 id=&quot;数据库的四个基本概念（Four-Basic-Concepts-of-Database-Systems）&quot;&gt;数据</summary>
       
     
     
@@ -52,7 +53,8 @@
     
       
       
-    <summary type="html">&lt;h2 id=&quot;1-摘要&quot;&gt;&lt;a href=&quot;#1-摘要&quot; class=&quot;headerlink&quot; title=&quot;1. 摘要&quot;&gt;&lt;/a&gt;1. 摘要&lt;/h2&gt;&lt;p&gt;Transformer 已经是 NLP(自然语言处理)领域的”标配”(如 BERT, GPT 系列), 但在 CV 中长</summary>
+    <summary type="html">&lt;h2 id=&quot;1-摘要&quot;&gt;1. 摘要&lt;/h2&gt;
+&lt;p&gt;Transformer 已经是 NLP(自然语言处理)领域的&quot;标配&quot;(如 BERT, GPT 系列), 但在 CV 中长期以&quot;局部改造&quot;的方式出现: 要么与 CNN 组合, 要么在 CNN 中以注意力替换部分卷积, 整体框架</summary>
       
     
     
@@ -78,7 +80,10 @@
     
       
       
-    <summary type="html">&lt;h1 id=&quot;DETR-Detection-Transformer&quot;&gt;&lt;a href=&quot;#DETR-Detection-Transformer&quot; class=&quot;headerlink&quot; title=&quot;DETR (Detection Transformer)&quot;&gt;&lt;/a&gt;DETR (</summary>
+    <summary type="html">&lt;h1&gt;DETR (Detection Transformer)&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;1-摘要&quot;&gt;1. 摘要&lt;/h2&gt;
+&lt;p&gt;把目标检测的任务看成集合预测的问题.DETR 提出了新的目标函数,通过二分图匹配的方式,强制模型输出一组独一无二的预测,理想状态只输出一个</summary>
       
     
     
@@ -124,7 +129,9 @@
     
       
       
-    <summary type="html">&lt;h2 id=&quot;1-RNN基础概念&quot;&gt;&lt;a href=&quot;#1-RNN基础概念&quot; class=&quot;headerlink&quot; title=&quot;1. RNN基础概念&quot;&gt;&lt;/a&gt;1. RNN基础概念&lt;/h2&gt;&lt;h3 id=&quot;1-1-什么是循环神经网络&quot;&gt;&lt;a href=&quot;#1-1-什么是循环神</summary>
+    <summary type="html">&lt;h2 id=&quot;1-RNN基础概念&quot;&gt;1. RNN基础概念&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-什么是循环神经网络&quot;&gt;1.1 什么是循环神经网络&lt;/h3&gt;
+&lt;p&gt;循环神经网络(Recurrent Neural Network, RNN)是一类专门处理序列数据的神经网络.与传统的全连</summary>
       
     
     
@@ -144,9 +151,12 @@
     <updated>2026-03-07T03:42:16.706Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;1-基本概念和术语&quot;&gt;&lt;a href=&quot;#1-基本概念和术语&quot; class=&quot;headerlink&quot; title=&quot;1. 基本概念和术语&quot;&gt;&lt;/a&gt;1. 基本概念和术语&lt;/h2&gt;&lt;h3 id=&quot;数据-Data&quot;&gt;&lt;a href=&quot;#数据-Data&quot; class=&quot;headerlink&quot; title=&quot;数据 (Data)&quot;&gt;&lt;/a&gt;数据 (Data)&lt;/h3&gt;&lt;p&gt;定义 | 数据 (Data): 数据是&lt;strong&gt;信息的载体&lt;/strong&gt;, 是描述客观事物属性的数, 字符及所有&lt;strong&gt;能输入到计算机中并被计算机程序识别和处理&lt;/strong&gt;的符号的集合.&lt;/p&gt;
+    <summary type="html">&lt;h2 id=&quot;1-基本概念和术语&quot;&gt;1. 基本概念和术语&lt;/h2&gt;
+&lt;h3 id=&quot;数据-Data&quot;&gt;数据 (Data)&lt;/h3&gt;
+&lt;p&gt;定义 | 数据 (Data): 数据是&lt;strong&gt;信息的载体&lt;/strong&gt;, 是描述客观事物属性的数, 字符及所有&lt;strong&gt;能输入到计算机中并被计算机程序识别和处理&lt;/strong&gt;的符号的集合.&lt;/p&gt;
 &lt;p&gt;对于计算机来说, 就是&lt;strong&gt;二进制的 0 和 1&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;数值型数据&lt;/strong&gt;: 整数, 定点数, 浮点数&lt;br&gt;&lt;strong&gt;非数值型数据&lt;/strong&gt;: 文字数据&lt;/p&gt;</summary>
+&lt;p&gt;&lt;strong&gt;数值型数据&lt;/strong&gt;: 整数, 定点数, 浮点数&lt;br&gt;
+&lt;strong&gt;非数值型数据&lt;/strong&gt;: 文字数据&lt;/p&gt;</summary>
     
     
     
@@ -167,7 +177,11 @@
     
       
       
-    <summary type="html">&lt;h1 id=&quot;CNN-Convolutional-Neural-Network-卷积神经网络-基础&quot;&gt;&lt;a href=&quot;#CNN-Convolutional-Neural-Network-卷积神经网络-基础&quot; class=&quot;headerlink&quot; title=&quot;CNN (Con</summary>
+    <summary type="html">&lt;h1&gt;CNN (Convolutional Neural Network, 卷积神经网络) (基础)&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;1-图像基础与本质&quot;&gt;1. 图像基础与本质&lt;/h2&gt;
+&lt;h3 id=&quot;1-1-图像的输入结构&quot;&gt;1.1 图像的输入结构&lt;/h3&gt;
+&lt;p&gt;以M</summary>
       
     
     
@@ -189,7 +203,9 @@
     
       
       
-    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;&lt;em&gt;SMPL&lt;/em&gt;,全称 Skinned Multi-Person Linear Model,是一套优雅而实用的三维人体参数化模型.</summary>
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;SMPL&lt;/em&gt;,全称 Skinned Multi-Person Linear Model,是一套优雅而实用的三维人体参数化模型.&lt;/p&gt;
+&lt;p&gt;更白话一点:给它一份&quot;骨架的姿态&quot;(pose)和&quot;一纸身形的刻度&quot;(shape</summary>
       
     
     
