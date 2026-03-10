@@ -441,7 +441,7 @@
 <li>计算当前时间步的输出和新的隐藏状态</li>
 <li>将新的隐藏状态传递给下一个时间步</li>
 </ol>
-<h2 id="RNNCell展开示意图"><a href="#RNNCell展开示意图" class="headerlink" title="RNNCell展开示意图"></a>RNNCell展开示意图</h2><p><img src="/medias/images/posts/rnn/RNNCell.png"></p>
+<h2 id="RNNCell展开示意图"><a href="#RNNCell展开示意图" class="headerlink" title="RNNCell展开示意图"></a>RNNCell展开示意图</h2><p><img src="/medias/images/posts/rnn/rnn-cell-diagram.png"></p>
 <p><em>图:RNN在时间维度上的展开示意图.展示了同一个RNN Cell如何在不同时间步被重复使用,通过隐藏状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">h_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 在时间步之间传递信息.</em></p>
 <h3 id="图片说明"><a href="#图片说明" class="headerlink" title="图片说明:"></a>图片说明:</h3><ol>
 <li><strong>绿色矩形块</strong>:表示RNN Cell,在四个时间步中被重复使用(权重共享)</li>
@@ -491,7 +491,7 @@ y_t = W_{hy}h_t + b_y
 <li><strong>状态传递</strong>:将信息从一个时间步传递到下一个时间步</li>
 <li><strong>特征提取</strong>:自动学习序列中的重要特征和模式</li>
 </ul>
-<h2 id="numLayers示意图"><a href="#numLayers示意图" class="headerlink" title="numLayers示意图"></a>numLayers示意图</h2><p><img src="/medias/images/posts/rnn/numLayers.png"></p>
+<h2 id="numLayers示意图"><a href="#numLayers示意图" class="headerlink" title="numLayers示意图"></a>numLayers示意图</h2><p><img src="/medias/images/posts/rnn/rnn-num-layers.png"></p>
 <p><em>图:多层RNN的结构示意图.展示了不同层数的RNN如何堆叠,每层都有自己的隐藏状态.</em></p>
 <h3 id="图片说明-1"><a href="#图片说明-1" class="headerlink" title="图片说明:"></a>图片说明:</h3><ul>
 <li><strong>上标</strong>:不是指数,而是表示不同的层数</li>
@@ -501,12 +501,12 @@ y_t = W_{hy}h_t + b_y
 <p>要注意的是,在图中同样颜色的RNNCell是同一个,体现了RNN的参数共享特性.</p>
 <hr>
 <h2 id="3-字符级RNN实现"><a href="#3-字符级RNN实现" class="headerlink" title="3. 字符级RNN实现"></a>3. 字符级RNN实现</h2><h3 id="3-1-数据预处理"><a href="#3-1-数据预处理" class="headerlink" title="3.1 数据预处理"></a>3.1 数据预处理</h3><p>在我们的实现中,我们使用了一个简单的字符级RNN来学习”hello”到”ohlol”的映射:</p>
-<p><img src="/medias/images/posts/rnn/example1.png" alt="example1"></p>
+<p><img src="/medias/images/posts/rnn/rnn-char-example.png" alt="example1"></p>
 <p><em>图:字符级RNN的任务示例.输入序列”hello”,输出序列”ohlol”.</em></p>
 <p>如图,我们输入的序列即是’h’,’e’,’l’,’l’,’o’,将来隐层的输出就得是’o’,’h’,’l’,’o’,’l’.</p>
 <p>我们遇到的问题就是,此时我们输入的是字符,而并不是一个向量,就会导致现在我们无法计算.</p>
 <p>所以,我们第一步就需要把这些字符进行向量化,如下图所示:</p>
-<p><img src="/medias/images/posts/rnn/vectorization.png" alt="向量化"></p>
+<p><img src="/medias/images/posts/rnn/rnn-vectorization.png" alt="向量化"></p>
 <p><em>图:字符向量化过程.从字符到索引,再到独热编码的转换过程.</em></p>
 <h3 id="字符向量化过程"><a href="#字符向量化过程" class="headerlink" title="字符向量化过程"></a>字符向量化过程</h3><p>在自然语言处理中,我们需要将字符转换为神经网络能够处理的数值形式.这个过程分为几个步骤:</p>
 <p><strong>第一步:构建词典</strong><br>首先根据所有可能出现的字符构造一个词典,给每个字符分配一个唯一的索引.在我们的例子中:</p>
@@ -1073,7 +1073,7 @@ optimizer <span class="token operator">=</span> torch<span class="token punctuat
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.9k</span>
+                        class="white-color">29.5k</span>
             
             
             
@@ -1272,12 +1272,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+    <script defer src="/libs/materialize/materialize.min.js"></script>
+    <script defer src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script defer src="/libs/aos/aos.js"></script>
+    <script defer src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script defer src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script defer src="/js/matery.js"></script>
 
     
 
@@ -1291,10 +1291,6 @@ $(function () {
     <!-- 鼠标星星特效 -->
     
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
     <!-- Baidu Analytics -->

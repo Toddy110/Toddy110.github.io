@@ -471,7 +471,7 @@
 </li>
 </ol>
 <p><strong>最主要的原因</strong>:使用 Transformer(神中神).</p>
-<h2 id="4-DETR-主体部分"><a href="#4-DETR-主体部分" class="headerlink" title="4. DETR 主体部分"></a>4. DETR 主体部分</h2><p><img src="/medias/images/posts/detr/DETR.png"></p>
+<h2 id="4-DETR-主体部分"><a href="#4-DETR-主体部分" class="headerlink" title="4. DETR 主体部分"></a>4. DETR 主体部分</h2><p><img src="/medias/images/posts/detr/detr-architecture.png"></p>
 <h3 id="4-1-集合预测动机"><a href="#4-1-集合预测动机" class="headerlink" title="4.1 集合预测动机"></a>4.1 集合预测动机</h3><p>DETR 输出一个固定大小的集合(n = 100),通常多于一张图片中的物体个数.固定长度的输出便于并行与张量化,且通过后续一一匹配与注意力抑制冗余,避免传统方法里”多→删”的后处理路径.一张图片的 GT 的 bounding box 可能只有几个,如何匹配并计算 loss?可以用二分图匹配解决.</p>
 <h3 id="4-2-匈牙利-二分图-匹配例子"><a href="#4-2-匈牙利-二分图-匹配例子" class="headerlink" title="4.2 匈牙利(二分图)匹配例子"></a>4.2 匈牙利(二分图)匹配例子</h3><p>可以理解为:如何分配工人完成任务,使得总成本最小.</p>
 <p>假如说现在我有3个工人a,b,c,要去完成3个工作x,y,z</p>
@@ -994,7 +994,7 @@ logits<span class="token punctuation">,</span> bboxes <span class="token operato
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.9k</span>
+                        class="white-color">29.5k</span>
             
             
             
@@ -1193,12 +1193,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+    <script defer src="/libs/materialize/materialize.min.js"></script>
+    <script defer src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script defer src="/libs/aos/aos.js"></script>
+    <script defer src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script defer src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script defer src="/js/matery.js"></script>
 
     
 
@@ -1212,10 +1212,6 @@ $(function () {
     <!-- 鼠标星星特效 -->
     
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
     <!-- Baidu Analytics -->

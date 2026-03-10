@@ -449,7 +449,7 @@
 <li>平移等变性(translation equivariance): 可近似理解为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>≈</mo><mi>g</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x)) \approx g(f(x))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">))</span></span></span></span>, 先平移再卷积与先卷积再平移的效果接近.</li>
 </ul>
 <p>正因 CNN 携带这些先验, 它在数据有限时更稳。而 ViT 只要有足够数据进行预训练, 再在下游迁移微调, 就能取得非常好的泛化与可扩展性。某种意义上, 它把 NLP 与 CV 的”范式”连通了: 使用几乎”原味”的 NLP Transformer 架构, 只在 patch 抽取与位置编码处保留少量图像特有的设定, 就能在大规模预训练的加持下, 在多项图像分类基准上达到或超过以往方法.</p>
-<h2 id="3-ViT-模型"><a href="#3-ViT-模型" class="headerlink" title="3. ViT 模型"></a>3. ViT 模型</h2><p><img src="/medias/images/posts/vit/ViT.png"><br>在模型设计上, 尽量沿用”原始的 Transformer Encoder 堆叠”.<br>好处: 可以直接复用 NLP 领域已被充分验证的模块与训练技巧, 工程与实验成本更低.</p>
+<h2 id="3-ViT-模型"><a href="#3-ViT-模型" class="headerlink" title="3. ViT 模型"></a>3. ViT 模型</h2><p><img src="/medias/images/posts/vit/vit-architecture.png"><br>在模型设计上, 尽量沿用”原始的 Transformer Encoder 堆叠”.<br>好处: 可以直接复用 NLP 领域已被充分验证的模块与训练技巧, 工程与实验成本更低.</p>
 <h3 id="3-1-Patch-切分与线性嵌入"><a href="#3-1-Patch-切分与线性嵌入" class="headerlink" title="3.1 Patch 切分与线性嵌入"></a>3.1 Patch 切分与线性嵌入</h3><p>给定一张输入图, 将其切分为若干 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mo>×</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">16\times16</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span></span></span></span> 的 patch; 把这些 patch 依序展平成 token, 并通过线性投射层得到 patch embedding。由于自注意力天然是”全互联”, 并不自带顺序信息, 因此需要为每个 token 额外加入位置编码(position embedding), 让序列既包含局部图像信息, 也编码其在整幅图中的相对位置.</p>
 <p>为实现分类, ViT 在序列最前加入一个可学习的分类标记 <a href="%E6%96%87%E4%B8%AD%E5%8E%9F%E4%BB%A5%22*%22%E8%A1%A8%E7%A4%BA">CLS</a>。它与其他 token 一同参与多头自注意力交互; 直觉上, [CLS] 会从所有 patch token 聚合全局语义。最终使用 [CLS] 对应的向量, 接一个 MLP head(分类头)进行预测, 训练时采用交叉熵损失.</p>
 <p>提示: 实践中, patch embedding 既可用”线性层 + 展平”实现, 也可等价地用 Conv2d(kernel=stride=patch_size)实现, 后者在工程上更高效.</p>
@@ -625,17 +625,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/">
+                <a href="/2026/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/ViT.png" class="responsive-img" alt="ViT(Vision Transformer)笔记">
                         
-                        <span class="card-title">ViT(Vision Transformer)笔记</span>
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="数据库基本概念与关系数据模型（Database Fundamentals and the Relational Data Model）">
+                        
+                        <span class="card-title">数据库基本概念与关系数据模型（Database Fundamentals and the Relational Data Model）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -645,35 +645,34 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" class="post-category">
-                                    计算机视觉
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/">
-                        <span class="chip bg-color">图像分类</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
-                    <a href="/tags/ViT/">
-                        <span class="chip bg-color">ViT</span>
+                    <a href="/tags/%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B/">
+                        <span class="chip bg-color">关系模型</span>
                     </a>
                     
-                    <a href="/tags/Transformer/">
-                        <span class="chip bg-color">Transformer</span>
+                    <a href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
                     </a>
                     
                 </div>
@@ -869,7 +868,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.9k</span>
+                        class="white-color">29.5k</span>
             
             
             
@@ -1068,12 +1067,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+    <script defer src="/libs/materialize/materialize.min.js"></script>
+    <script defer src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script defer src="/libs/aos/aos.js"></script>
+    <script defer src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script defer src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script defer src="/js/matery.js"></script>
 
     
 
@@ -1087,10 +1086,6 @@ $(function () {
     <!-- 鼠标星星特效 -->
     
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
     <!-- Baidu Analytics -->

@@ -6,7 +6,7 @@
   <link href="https://toddy110.github.io/atom.xml" rel="self"/>
   
   <link href="https://toddy110.github.io/"/>
-  <updated>2026-03-07T03:26:56.624Z</updated>
+  <updated>2026-03-10T14:23:01.893Z</updated>
   <id>https://toddy110.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数据库基本概念与关系数据模型（Database Fundamentals and the Relational Data Model）</title>
+    <link href="https://toddy110.github.io/2026/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://toddy110.github.io/2026/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/</id>
+    <published>2026-03-09T16:00:00.000Z</published>
+    <updated>2026-03-10T14:23:01.893Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数据库基本概念与关系数据模型（Database-Fundamentals-and-the-Relational-Data-Model）&quot;&gt;&lt;a href=&quot;#数据库基本概念与关系数据模型（Database-Fundamentals-and-the-Relation</summary>
+      
+    
+    
+    
+    <category term="数据库" scheme="https://toddy110.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="数据库" scheme="https://toddy110.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="关系模型" scheme="https://toddy110.github.io/tags/%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="SQL" scheme="https://toddy110.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ViT(Vision Transformer)笔记</title>
     <link href="https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/"/>
     <id>https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/</id>
     <published>2025-11-11T10:26:53.000Z</published>
-    <updated>2026-03-07T03:26:56.624Z</updated>
+    <updated>2026-03-07T03:41:59.847Z</updated>
     
     
       
@@ -47,7 +73,7 @@
     <link href="https://toddy110.github.io/2025/11/10/DETR-Detection-Transformer-%E7%AC%94%E8%AE%B0/"/>
     <id>https://toddy110.github.io/2025/11/10/DETR-Detection-Transformer-%E7%AC%94%E8%AE%B0/</id>
     <published>2025-11-10T04:00:00.000Z</published>
-    <updated>2026-03-07T03:26:56.643Z</updated>
+    <updated>2026-03-07T03:42:07.766Z</updated>
     
     
       
@@ -93,7 +119,7 @@
     <link href="https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/"/>
     <id>https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/</id>
     <published>2025-10-13T07:12:09.000Z</published>
-    <updated>2026-03-07T03:28:29.181Z</updated>
+    <updated>2026-03-07T03:41:51.795Z</updated>
     
     
       
@@ -115,7 +141,7 @@
     <link href="https://toddy110.github.io/2025/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/"/>
     <id>https://toddy110.github.io/2025/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/</id>
     <published>2025-10-11T08:48:12.000Z</published>
-    <updated>2026-03-07T03:26:56.643Z</updated>
+    <updated>2026-03-07T03:42:16.706Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;1-基本概念和术语&quot;&gt;&lt;a href=&quot;#1-基本概念和术语&quot; class=&quot;headerlink&quot; title=&quot;1. 基本概念和术语&quot;&gt;&lt;/a&gt;1. 基本概念和术语&lt;/h2&gt;&lt;h3 id=&quot;数据-Data&quot;&gt;&lt;a href=&quot;#数据-Data&quot; class=&quot;headerlink&quot; title=&quot;数据 (Data)&quot;&gt;&lt;/a&gt;数据 (Data)&lt;/h3&gt;&lt;p&gt;定义 | 数据 (Data): 数据是&lt;strong&gt;信息的载体&lt;/strong&gt;, 是描述客观事物属性的数, 字符及所有&lt;strong&gt;能输入到计算机中并被计算机程序识别和处理&lt;/strong&gt;的符号的集合.&lt;/p&gt;
