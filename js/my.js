@@ -1,0 +1,1 @@
+window.megaboldCompat=!0;
