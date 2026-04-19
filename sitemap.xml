@@ -2,9 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://toddy110.github.io/about/index.html</loc>
+    
+    <lastmod>2026-04-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://toddy110.github.io/2026/03/23/pthread-sin-sync-strategies/</loc>
     
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-04-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2026-04-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://toddy110.github.io/2025/10/13/MNIST-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%EF%BC%88MLP%EF%BC%89%E5%88%86%E7%B1%BB%E5%99%A8%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2026-04-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -29,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/</loc>
-    
-    <lastmod>2026-03-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://toddy110.github.io/2025/09/19/SMPL%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2026-03-29</lastmod>
@@ -48,15 +66,6 @@
   
   <url>
     <loc>https://toddy110.github.io/2025/10/01/CNN%E5%9F%BA%E7%A1%80/</loc>
-    
-    <lastmod>2026-03-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://toddy110.github.io/2025/10/13/MNIST-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%EF%BC%88MLP%EF%BC%89%E5%88%86%E7%B1%BB%E5%99%A8%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2026-03-29</lastmod>
     
@@ -92,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://toddy110.github.io/about/index.html</loc>
+    <loc>https://toddy110.github.io/contact/index.html</loc>
     
     <lastmod>2026-03-29</lastmod>
     
@@ -102,15 +111,6 @@
   
   <url>
     <loc>https://toddy110.github.io/friends/index.html</loc>
-    
-    <lastmod>2026-03-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://toddy110.github.io/contact/index.html</loc>
     
     <lastmod>2026-03-29</lastmod>
     
@@ -230,13 +230,6 @@
   </url>
   
   <url>
-    <loc>https://toddy110.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://toddy110.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -252,6 +245,13 @@
   
   <url>
     <loc>https://toddy110.github.io/tags/SQL/</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://toddy110.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -274,14 +274,14 @@
   </url>
   
   <url>
-    <loc>https://toddy110.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://toddy110.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://toddy110.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>https://toddy110.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
