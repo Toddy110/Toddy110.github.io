@@ -6,7 +6,7 @@
   <link href="https://toddy110.github.io/atom.xml" rel="self"/>
   
   <link href="https://toddy110.github.io/"/>
-  <updated>2026-05-31T07:46:43.460Z</updated>
+  <updated>2026-05-31T09:09:54.173Z</updated>
   <id>https://toddy110.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://toddy110.github.io/2026/05/08/parallel-lab4-hip-csr-cg/"/>
     <id>https://toddy110.github.io/2026/05/08/parallel-lab4-hip-csr-cg/</id>
     <published>2026-05-08T00:00:00.000Z</published>
-    <updated>2026-05-31T07:46:43.460Z</updated>
+    <updated>2026-05-31T09:09:54.173Z</updated>
     
     
       
@@ -54,7 +54,7 @@
     <link href="https://toddy110.github.io/2026/05/06/parallel-lab3-mpi-csr-cg/"/>
     <id>https://toddy110.github.io/2026/05/06/parallel-lab3-mpi-csr-cg/</id>
     <published>2026-05-06T00:00:00.000Z</published>
-    <updated>2026-05-31T07:46:43.460Z</updated>
+    <updated>2026-05-31T09:09:54.173Z</updated>
     
     
       
@@ -87,7 +87,7 @@
     <link href="https://toddy110.github.io/2026/04/24/parallel-lab2-pthread-csr-cg/"/>
     <id>https://toddy110.github.io/2026/04/24/parallel-lab2-pthread-csr-cg/</id>
     <published>2026-04-24T00:00:00.000Z</published>
-    <updated>2026-05-31T07:46:43.460Z</updated>
+    <updated>2026-05-31T09:09:54.169Z</updated>
     
     
       
@@ -120,7 +120,7 @@
     <link href="https://toddy110.github.io/2026/03/23/pthread-sin-sync-strategies/"/>
     <id>https://toddy110.github.io/2026/03/23/pthread-sin-sync-strategies/</id>
     <published>2026-03-23T00:00:00.000Z</published>
-    <updated>2026-05-31T07:47:34.381Z</updated>
+    <updated>2026-05-31T09:09:54.173Z</updated>
     
     
       
@@ -149,7 +149,7 @@
     <link href="https://toddy110.github.io/2026/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/"/>
     <id>https://toddy110.github.io/2026/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/</id>
     <published>2026-03-10T14:22:22.000Z</published>
-    <updated>2026-03-10T14:30:44.476Z</updated>
+    <updated>2026-05-31T09:09:54.173Z</updated>
     
     
       
@@ -176,7 +176,7 @@
     <link href="https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/"/>
     <id>https://toddy110.github.io/2025/11/11/ViT-Vision-Transformer-%E7%AC%94%E8%AE%B0/</id>
     <published>2025-11-11T10:26:53.000Z</published>
-    <updated>2026-03-29T08:57:44.107Z</updated>
+    <updated>2026-05-31T09:09:54.173Z</updated>
     
     
       
@@ -203,7 +203,7 @@
     <link href="https://toddy110.github.io/2025/11/10/DETR-Detection-Transformer-%E7%AC%94%E8%AE%B0/"/>
     <id>https://toddy110.github.io/2025/11/10/DETR-Detection-Transformer-%E7%AC%94%E8%AE%B0/</id>
     <published>2025-11-10T04:00:00.000Z</published>
-    <updated>2026-03-29T08:57:44.110Z</updated>
+    <updated>2026-05-31T09:09:54.169Z</updated>
     
     
       
@@ -230,7 +230,7 @@
     <link href="https://toddy110.github.io/2025/10/13/MNIST-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%EF%BC%88MLP%EF%BC%89%E5%88%86%E7%B1%BB%E5%99%A8%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3/"/>
     <id>https://toddy110.github.io/2025/10/13/MNIST-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA%EF%BC%88MLP%EF%BC%89%E5%88%86%E7%B1%BB%E5%99%A8%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3/</id>
     <published>2025-10-13T07:17:23.000Z</published>
-    <updated>2026-04-19T06:21:30.335Z</updated>
+    <updated>2026-05-31T09:09:54.173Z</updated>
     
     
       
@@ -252,7 +252,7 @@
     <link href="https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/"/>
     <id>https://toddy110.github.io/2025/10/13/RNN%E5%9F%BA%E7%A1%80/</id>
     <published>2025-10-13T07:12:09.000Z</published>
-    <updated>2026-04-19T06:21:30.419Z</updated>
+    <updated>2026-05-31T09:09:54.166Z</updated>
     
     
       
@@ -276,7 +276,7 @@
     <link href="https://toddy110.github.io/2025/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/"/>
     <id>https://toddy110.github.io/2025/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/</id>
     <published>2025-10-11T08:48:12.000Z</published>
-    <updated>2026-03-29T10:09:14.726Z</updated>
+    <updated>2026-05-31T09:09:54.166Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;1-基本概念和术语&quot;&gt;1. 基本概念和术语&lt;/h2&gt;
@@ -300,7 +300,7 @@
     <link href="https://toddy110.github.io/2025/10/01/CNN%E5%9F%BA%E7%A1%80/"/>
     <id>https://toddy110.github.io/2025/10/01/CNN%E5%9F%BA%E7%A1%80/</id>
     <published>2025-10-01T04:50:12.000Z</published>
-    <updated>2026-03-29T08:57:44.107Z</updated>
+    <updated>2026-05-31T09:09:54.169Z</updated>
     
     
       
@@ -326,7 +326,7 @@
     <link href="https://toddy110.github.io/2025/09/19/SMPL%E5%9F%BA%E7%A1%80/"/>
     <id>https://toddy110.github.io/2025/09/19/SMPL%E5%9F%BA%E7%A1%80/</id>
     <published>2025-09-19T09:37:20.000Z</published>
-    <updated>2026-03-29T08:57:44.110Z</updated>
+    <updated>2026-05-31T09:09:54.169Z</updated>
     
     
       
