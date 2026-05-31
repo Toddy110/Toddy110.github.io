@@ -6,7 +6,7 @@
   <link href="https://toddy110.github.io/atom.xml" rel="self"/>
   
   <link href="https://toddy110.github.io/"/>
-  <updated>2026-04-19T06:24:48.731Z</updated>
+  <updated>2026-05-31T07:46:43.460Z</updated>
   <id>https://toddy110.github.io/</id>
   
   <author>
@@ -17,11 +17,110 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于 HIP 的 CPU+GPU 异构 CSR 稀疏矩阵 CG 求解</title>
+    <link href="https://toddy110.github.io/2026/05/08/parallel-lab4-hip-csr-cg/"/>
+    <id>https://toddy110.github.io/2026/05/08/parallel-lab4-hip-csr-cg/</id>
+    <published>2026-05-08T00:00:00.000Z</published>
+    <updated>2026-05-31T07:46:43.460Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;基于 HIP 的 CPU+GPU 异构 CSR 稀疏矩阵 CG 求解&lt;/h1&gt;
+&lt;p&gt;这篇文章由《并行计算》课程实验报告整理而来，保留实验思路、实现方法、核心代码、性能数据和图表，便于后续复盘。&lt;/p&gt;
+&lt;h2 id=&quot;一、实验名称与内容&quot;&gt;一、实验名称与内容&lt;/h2&gt;
+</summary>
+      
+    
+    
+    
+    <category term="并行计算" scheme="https://toddy110.github.io/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="并行计算" scheme="https://toddy110.github.io/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    <category term="CSR" scheme="https://toddy110.github.io/tags/CSR/"/>
+    
+    <category term="HIP" scheme="https://toddy110.github.io/tags/HIP/"/>
+    
+    <category term="GPU" scheme="https://toddy110.github.io/tags/GPU/"/>
+    
+    <category term="异构计算" scheme="https://toddy110.github.io/tags/%E5%BC%82%E6%9E%84%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于 MPI 的 CSR 稀疏矩阵 CG 并行求解与多节点性能分析</title>
+    <link href="https://toddy110.github.io/2026/05/06/parallel-lab3-mpi-csr-cg/"/>
+    <id>https://toddy110.github.io/2026/05/06/parallel-lab3-mpi-csr-cg/</id>
+    <published>2026-05-06T00:00:00.000Z</published>
+    <updated>2026-05-31T07:46:43.460Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;基于 MPI 的 CSR 稀疏矩阵 CG 并行求解与多节点性能分析&lt;/h1&gt;
+&lt;p&gt;这篇文章由《并行计算》课程实验报告整理而来，保留实验思路、实现方法、核心代码、性能数据和图表，便于后续复盘。&lt;/p&gt;
+&lt;h2 id=&quot;一、实验名称与内容&quot;&gt;一、实验名称与内容&lt;/h2&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="并行计算" scheme="https://toddy110.github.io/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="并行计算" scheme="https://toddy110.github.io/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    <category term="CSR" scheme="https://toddy110.github.io/tags/CSR/"/>
+    
+    <category term="共轭梯度法" scheme="https://toddy110.github.io/tags/%E5%85%B1%E8%BD%AD%E6%A2%AF%E5%BA%A6%E6%B3%95/"/>
+    
+    <category term="MPI" scheme="https://toddy110.github.io/tags/MPI/"/>
+    
+    <category term="多节点" scheme="https://toddy110.github.io/tags/%E5%A4%9A%E8%8A%82%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于 Pthread 的 CSR 稀疏矩阵 CG 并行求解</title>
+    <link href="https://toddy110.github.io/2026/04/24/parallel-lab2-pthread-csr-cg/"/>
+    <id>https://toddy110.github.io/2026/04/24/parallel-lab2-pthread-csr-cg/</id>
+    <published>2026-04-24T00:00:00.000Z</published>
+    <updated>2026-05-31T07:46:43.460Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;基于 Pthread 的 CSR 稀疏矩阵 CG 并行求解&lt;/h1&gt;
+&lt;p&gt;这篇文章由《并行计算》课程实验报告整理而来，保留实验思路、实现方法、核心代码、性能数据和图表，便于后续复盘。&lt;/p&gt;
+&lt;h2 id=&quot;一、实验名称与内容&quot;&gt;一、实验名称与内容&lt;/h2&gt;
+&lt;h3 i</summary>
+      
+    
+    
+    
+    <category term="并行计算" scheme="https://toddy110.github.io/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="并行计算" scheme="https://toddy110.github.io/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    <category term="Pthread" scheme="https://toddy110.github.io/tags/Pthread/"/>
+    
+    <category term="性能分析" scheme="https://toddy110.github.io/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/"/>
+    
+    <category term="CSR" scheme="https://toddy110.github.io/tags/CSR/"/>
+    
+    <category term="共轭梯度法" scheme="https://toddy110.github.io/tags/%E5%85%B1%E8%BD%AD%E6%A2%AF%E5%BA%A6%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>用 Pthread 计算 sin(x)：四种同步策略的并行性能对比</title>
     <link href="https://toddy110.github.io/2026/03/23/pthread-sin-sync-strategies/"/>
     <id>https://toddy110.github.io/2026/03/23/pthread-sin-sync-strategies/</id>
     <published>2026-03-23T00:00:00.000Z</published>
-    <updated>2026-04-19T06:24:48.731Z</updated>
+    <updated>2026-05-31T07:47:34.381Z</updated>
     
     
       
@@ -31,6 +130,8 @@
       
     
     
+    
+    <category term="并行计算" scheme="https://toddy110.github.io/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
     
     
     <category term="并行计算" scheme="https://toddy110.github.io/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
