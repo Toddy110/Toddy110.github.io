@@ -6,7 +6,7 @@
   <link href="https://toddy110.github.io/atom.xml" rel="self"/>
   
   <link href="https://toddy110.github.io/"/>
-  <updated>2026-10-11T09:50:34.844Z</updated>
+  <updated>2026-10-13T07:41:51.877Z</updated>
   <id>https://toddy110.github.io/</id>
   
   <author>
@@ -21,12 +21,13 @@
     <link href="https://toddy110.github.io/2026/10/11/interpolation-basics/"/>
     <id>https://toddy110.github.io/2026/10/11/interpolation-basics/</id>
     <published>2026-10-11T07:00:00.000Z</published>
-    <updated>2026-10-11T09:50:34.844Z</updated>
+    <updated>2026-10-13T07:41:51.877Z</updated>
     
     
     <summary type="html">&lt;h1&gt;插值法: 从节点数据到多项式与误差&lt;/h1&gt;
 &lt;p&gt;知道一个函数在几个位置的值, 能不能估计它在其他位置的值? 插值法就在处理这件事. 最开始看这一章, 拉格朗日、牛顿、均差、差分很容易混在一起. 我把它们放到同一组小数据上算一遍, 再用 C++ 和几组实验看看各自的特点.&lt;/p&gt;
-&lt;p&gt;第一次读, 可以先跟着三个点的例子走. 余项的证明放在后面, 不影响先把程序跑起来.&lt;/p&gt;</summary>
+&lt;p&gt;第一次读, 可以先跟着三个点的例子走, 再看分段插值和样条. 均差性质、重节点与余项证明可以在熟悉构造方法后回头读. 文末有独立 C++ 程序, 既能复现作业实验, 也能检查重节点 Hermite、龙格现象和自然样条.&lt;/p&gt;
+&lt;p&gt;本文依次讨论插值条件与唯一性、拉格朗日、范德蒙德、牛顿与差分、Hermite、余项、龙格现象、三次样条, 最后用实验对照这些方法. 公式中的节点下标通常从 0 开始; 代码中的节点个数用 count 表示, 两者相差一个.&lt;/p&gt;</summary>
     
     
     
